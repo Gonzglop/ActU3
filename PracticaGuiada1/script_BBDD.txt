@@ -1,0 +1,13 @@
+create database prueba;
+use prueba;
+CREATE TABLE productos(sección VARCHAR(5),nombreartículo VARCHAR(50),fecha VARCHAR(50),paísdeorigen VARCHAR(50),precio VARCHAR(50));
+INSERT INTO productos VALUE ("CERÁMICA","Tubos","4/3/97","China","140 €"),
+("CERÁMICA","Plato Decorativo","7/6/97","China","45 €"),
+("CERÁMICA","Juego de te","15/1/97","China","36 €"),
+("CERÁMICA","Cenicero","2/7/97","Japón","16 €"),
+("CERÁMICA","Maceta","23/2/97","España","24 €"),
+("CERÁMICA","Jarra china","2/9/97","China","106 €"),
+("CONFECCIÓN","Tarje Caballero","11/3/97","Italia","237 €"),
+("CONFECCIÓN","Pantalón Señora","1/5/97","Marruecos","145 €"),
+("CONFECCIÓN","Camisa Caballero","11/8/97","España","56 €")
+;
