@@ -1,41 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ActU3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ActU3/act1/Act3_1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act1/Act3_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act2/Act3_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act3/Act3_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act4/Act3_4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/.idea/libraries/mysql_connector_java_8_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/PracticaGuiada1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/script_BBDD.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/src/aplicacion_consulta/Aplicacion_Consulta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaGuiada1/src/aplicacion_consulta/Marco_Aplicacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoFinal-1/ProyectoFinal-1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoFinal-1/ProyectoFinal.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/app/src/main/res/drawable/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/app/src/main/res/drawable/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyecto3/app/src/main/res/drawable/img3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal/ProyectoFinal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal/ProyectoFinal.iml" afterDir="false" />
+    <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="hasta actividad 4">
+      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/Filosofo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Filosofo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Mesa.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Principal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Filosofo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Mesa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +56,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -151,8 +137,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665907657428</updated>
-      <workItem from="1665907659190" duration="8782000" />
+      <workItem from="1665907659190" duration="11461000" />
     </task>
+    <task id="LOCAL-00001" summary="hasta actividad 4">
+      <created>1665952036553</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665952036553</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,5 +165,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="hasta actividad 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="hasta actividad 4" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
