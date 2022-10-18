@@ -2,30 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="hasta actividad 4">
-      <change afterPath="$PROJECT_DIR$/src/act5/Act3_5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act6/Act3_6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act6/Act3_6_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act7/Act3_7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act8/Act3_8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/act9/Act3_9.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/Filosofo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Filosofo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Mesa.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Principal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Filosofo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Mesa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +136,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665907657428</updated>
-      <workItem from="1665907659190" duration="20690000" />
+      <workItem from="1665907659190" duration="21339000" />
     </task>
     <task id="LOCAL-00001" summary="hasta actividad 4">
       <created>1665952036553</created>
@@ -176,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666023222010</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hasta actividad 4">
+      <created>1666040877167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666040877167</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
