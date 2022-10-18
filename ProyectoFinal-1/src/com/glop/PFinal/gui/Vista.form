@@ -59,7 +59,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Nombre:"/>
             </properties>
           </component>
@@ -69,7 +68,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Teléfono:"/>
             </properties>
           </component>
@@ -79,7 +77,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Dirección:"/>
             </properties>
           </component>
@@ -89,7 +86,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Fecha:"/>
             </properties>
           </component>
@@ -101,7 +97,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <toolTipText value="Introduzca su nombre completo"/>
             </properties>
           </component>
@@ -113,7 +108,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <toolTipText value="Introduzca su número de teléfono"/>
             </properties>
           </component>
@@ -125,7 +119,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <toolTipText value="Introduzca su dirección habitual"/>
             </properties>
           </component>
@@ -156,7 +149,6 @@
                 <properties>
                   <autoscrolls value="false"/>
                   <background color="-10896903"/>
-                  <font name="Ink Free"/>
                   <selected value="true"/>
                   <text value="Banquete"/>
                   <toolTipText value="100 personas máximo"/>
@@ -169,7 +161,6 @@
                 </constraints>
                 <properties>
                   <background color="-10896903"/>
-                  <font name="Ink Free"/>
                   <text value="Jornada"/>
                   <toolTipText value="50 personas máximo"/>
                 </properties>
@@ -182,7 +173,6 @@
                 <properties>
                   <autoscrolls value="false"/>
                   <background color="-10896903"/>
-                  <font name="Ink Free"/>
                   <text value="Congreso"/>
                   <toolTipText value="50 personas máximo&#10;Habilita las opciones nº de jornadas y habitaciones"/>
                 </properties>
@@ -195,7 +185,6 @@
               <forms/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Nº de personas:"/>
             </properties>
           </component>
@@ -207,7 +196,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <toolTipText value="Introduzca el número de personas que asistirán al evento"/>
             </properties>
           </component>
@@ -217,27 +205,7 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Tipo de cocina:"/>
-            </properties>
-          </component>
-          <component id="edcf1" class="javax.swing.JComboBox" binding="cbTipoCocina" custom-create="true">
-            <constraints>
-              <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-              <forms top="0" left="0" bottom="0" right="15"/>
-            </constraints>
-            <properties>
-              <font name="Ink Free"/>
-              <model>
-                <item value="Seleccione el tipo de cocina"/>
-                <item value="Bufé"/>
-                <item value="Bufé vegetariano"/>
-                <item value="A la carta"/>
-                <item value="Cita con el chef"/>
-                <item value="No precisa"/>
-              </model>
-              <name value=""/>
-              <requestFocusEnabled value="true"/>
             </properties>
           </component>
           <component id="4feb" class="javax.swing.JLabel">
@@ -246,7 +214,6 @@
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Tipo:"/>
             </properties>
           </component>
@@ -256,8 +223,23 @@
               <forms/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <toolTipText value="Seleccione la fecha de reserva"/>
+            </properties>
+          </component>
+          <component id="f0837" class="javax.swing.JComboBox" binding="cbTipoCocina">
+            <constraints>
+              <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="Seleccione el tipo de cocina"/>
+                <item value="Bufé"/>
+                <item value="Bufé vegetariano"/>
+                <item value="A la carta"/>
+                <item value="Cita con el chef"/>
+                <item value="No precisa"/>
+              </model>
             </properties>
           </component>
         </children>
@@ -276,7 +258,6 @@
           <component id="459ee" class="javax.swing.JButton" binding="btnCancelar">
             <constraints/>
             <properties>
-              <font name="Ink Free"/>
               <text value="Cancelar"/>
               <toolTipText value="Cierra esta ventana sin realizar la reserva"/>
             </properties>
@@ -284,7 +265,6 @@
           <component id="ff394" class="javax.swing.JButton" binding="btnAceptar">
             <constraints/>
             <properties>
-              <font name="Ink Free"/>
               <text value="Aceptar"/>
               <toolTipText value="Registra la reserva con sus datos"/>
             </properties>
@@ -306,7 +286,6 @@
             <constraints/>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <text value="Nº de jornadas"/>
             </properties>
           </component>
@@ -314,7 +293,6 @@
             <constraints/>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <toolTipText value="Seleccione el nº de jornadas, hasta 30 días máximo"/>
             </properties>
           </component>
@@ -322,7 +300,6 @@
             <constraints/>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <horizontalAlignment value="11"/>
               <horizontalTextPosition value="10"/>
               <selected value="false"/>
@@ -350,7 +327,6 @@
             </constraints>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <text value="Nº habitaciones"/>
             </properties>
           </component>
@@ -361,7 +337,6 @@
             </constraints>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <preferredSize width="49" height="30"/>
               <text value="0"/>
             </properties>
@@ -373,18 +348,16 @@
             </constraints>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <text value="Tipo de habitación"/>
             </properties>
           </component>
-          <component id="77b1b" class="javax.swing.JComboBox" binding="cbTipoHabitacion">
+          <component id="8ce57" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
             <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
               <enabled value="false"/>
-              <font name="Ink Free"/>
               <model>
                 <item value="Seleccione..."/>
                 <item value="Individual"/>
@@ -415,9 +388,7 @@
             <children>
               <component id="aed9d" class="javax.swing.JList" binding="list1" default-binding="true">
                 <constraints/>
-                <properties>
-                  <font name="Ink Free"/>
-                </properties>
+                <properties/>
               </component>
             </children>
           </scrollpane>
@@ -426,7 +397,6 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <font name="Ink Free"/>
               <text value="Reserva:"/>
             </properties>
           </component>
