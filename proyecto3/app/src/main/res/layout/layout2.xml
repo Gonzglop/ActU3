@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img2"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:text="Valora nuestra aplicación"/>
+
+    <TextView
+        android:layout_marginTop="35sp"
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:alpha="0.6"
+        android:text="Tu opinión significa mucho para nosotros"/>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:rowCount="3"
+        android:columnCount="2"
+        android:layout_marginTop="50dp"
+        android:alpha="0.7">
+
+        <TextView
+            android:layout_marginTop="16sp"
+            android:id="@+id/txtD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diseño"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <RatingBar
+            android:id="@+id/rtD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="1" />
+
+        <TextView
+            android:layout_marginTop="16sp"
+            android:id="@+id/txtU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light"
+            android:text="Utilidad"
+            android:textSize="20dp" />
+
+        <RatingBar
+            android:id="@+id/rtU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="1" />
+        <TextView
+            android:layout_marginTop="16sp"
+            android:id="@+id/txtF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Fucionalidad"
+            android:textSize="20dp" />
+
+        <RatingBar
+            android:id="@+id/rtF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="1"
+            />
+    </GridLayout>
+
+</LinearLayout>
