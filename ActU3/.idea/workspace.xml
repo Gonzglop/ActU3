@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="hasta actividad 4">
-      <change beforePath="$PROJECT_DIR$/src/act1/Act3_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act1/Act3_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act2/Act3_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act2/Act3_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act3/Act3_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act3/Act3_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act4/Act3_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act4/Act3_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act5/Act3_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act5/Act3_5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act6/Act3_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act6/Act3_6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act6/Act3_6_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act6/Act3_6_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act7/Act3_7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act7/Act3_7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act8/Act3_8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act8/Act3_8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/act9/Act3_9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/act9/Act3_9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prueba.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Desarrolo_Interfaces" beforeDir="false" afterPath="$PROJECT_DIR$/../Desarrolo_Interfaces" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665907657428</updated>
       <workItem from="1665907659190" duration="21339000" />
-      <workItem from="1666162417092" duration="299000" />
+      <workItem from="1666162417092" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="hasta actividad 4">
       <created>1665952036553</created>
