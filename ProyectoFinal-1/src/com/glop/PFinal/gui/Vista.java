@@ -34,7 +34,6 @@ public class Vista extends JDialog{
     JLabel nJornadasLbl;
     JLabel nHabitaciones;
     JLabel tipoHabitacion;
-    private JComboBox comboBox1;
     ButtonGroup btnGrupoTipo;
 //modelo
     DefaultListModel<Reserva> dlm;

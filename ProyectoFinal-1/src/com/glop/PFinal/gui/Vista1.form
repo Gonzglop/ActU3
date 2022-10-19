@@ -82,7 +82,7 @@
             <properties>
               <text value="Archivo"/>
             </properties>
-            <border type="none" title="Archivo"/>
+            <border type="none" title=""/>
             <children>
               <component id="4e648" class="javax.swing.JMenuItem">
                 <constraints/>
@@ -103,7 +103,7 @@
             <properties>
               <text value="Editar"/>
             </properties>
-            <border type="none" title="Editar"/>
+            <border type="none" title=""/>
             <children/>
           </grid>
           <grid id="2400" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
@@ -111,7 +111,7 @@
             <properties>
               <text value="Ayuda"/>
             </properties>
-            <border type="none" title="Ayuda"/>
+            <border type="none" title=""/>
             <children/>
           </grid>
         </children>

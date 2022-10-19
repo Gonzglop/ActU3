@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.IOException;
+import java.util.Objects;
 
 public class Controlador implements ActionListener, WindowListener {
 
@@ -52,15 +53,22 @@ public class Controlador implements ActionListener, WindowListener {
 
         switch (comando){
             case "Aceptar":
-                modelo.altaReserva(vista.txtNombre.getText(), vista.txtTlfno.getText(), vista.txtDireccion.getText(),
-                        vista.dpFecha.getDate(),obtieneRadioBtn(), (Integer) vista.txtNumPersonas.getValue(),
-                        String.valueOf(vista.cbTipoCocina.getSelectedItem()), (Integer) vista.spinNumJornadas.getValue(),
-                        vista.checkHabitaciones.isSelected(), Integer.parseInt(vista.txtNumHabitaciones.getText()),
-                        String.valueOf(vista.cbTipoHabitacion.getSelectedItem()));
-                refrescarListaReservas();
+                String cadenaErrores = "";
+                cadenaErrores = compruebaCamposVacios(cadenaErrores);
 
-                JOptionPane.showMessageDialog(null, "¡Reserva realizada con éxito!\n"+modelo.getListaReservas());
-                break;
+                if(Objects.equals(cadenaErrores, "")){
+                    modelo.altaReserva(
+                            vista.txtNombre.getText(), vista.txtTlfno.getText(), vista.txtDireccion.getText(),
+                            vista.dpFecha.getDate(),obtieneRadioBtn(), (Integer) vista.txtNumPersonas.getValue(),
+                            String.valueOf(vista.cbTipoCocina.getSelectedItem()), (Integer) vista.spinNumJornadas.getValue(),
+                            vista.checkHabitaciones.isSelected(), Integer.parseInt(vista.txtNumHabitaciones.getText()),
+                            String.valueOf(vista.cbTipoHabitacion.getSelectedItem())
+                    );
+                    refrescarListaReservas();
+                    JOptionPane.showMessageDialog(null, modelo.getListaReservas(), "¡Reserva realizada con éxito!", JOptionPane.INFORMATION_MESSAGE);
+                }else {
+                    JOptionPane.showMessageDialog(null, cadenaErrores, "No se ha podido realizar la reserva", JOptionPane.WARNING_MESSAGE);
+                }
 
             case "Cancelar":
                 vista.dlm.clear();
@@ -83,6 +91,33 @@ public class Controlador implements ActionListener, WindowListener {
                 activDesactivPanel3();
                 break;
         }
+    }
+
+    private void realizaReserva() {
+
+    }
+
+    private String compruebaCamposVacios(String cadenaErrores) {
+        if(Objects.equals(vista.txtNombre.getText(), "")){
+            cadenaErrores += "No has introducido el nombre\n";
+        }
+        if(Objects.equals(vista.txtTlfno.getText(), "")){
+            cadenaErrores += "No has introducido el teléfono\n";
+        }
+        if(Objects.equals(vista.txtDireccion.getText(), "")){
+            cadenaErrores += "No has introducido la dirección\n";
+        }
+        if(vista.dpFecha.getDate() == null){
+            cadenaErrores += "No has introducido la fecha\n";
+        }
+        if(vista.txtNumPersonas.getValue()=="" | (int)vista.txtNumPersonas.getValue()<=0 ){
+            cadenaErrores += "No has introducido el nº de personas\n";
+        }
+
+        if(String.valueOf(vista.cbTipoCocina.getSelectedItem())=="Seleccione el tipo de cocina"){
+            cadenaErrores += "No has seleccionado el tipo de cocina\n";
+        }
+        return cadenaErrores;
     }
 
     private void activDesactivPanel3() {
@@ -125,8 +160,6 @@ public class Controlador implements ActionListener, WindowListener {
                 vista.spinNumJornadas.setEnabled(true);
                 vista.checkHabitaciones.setEnabled(true);
                 vista.nJornadasLbl.setEnabled(true);
-                //vista.sm.setValue(50);
-                //vista.sm.setMaximum(50);
             }
     }
 
