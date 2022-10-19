@@ -12,8 +12,7 @@ public class Act3_5 {
 
     public static void main(String[] args) {
         try {
-            //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "root");
             final String sqlQuery = "SELECT * FROM CLIENTES WHERE DNI = ?";
             PreparedStatement s = c.prepareStatement(sqlQuery,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = null;

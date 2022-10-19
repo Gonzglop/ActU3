@@ -10,10 +10,8 @@ import java.sql.*;
 public class Act3_7_2 {
 
     public static void main(String[] args) {
-        //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
         try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root")) {
-            try (PreparedStatement sInsertFact = c.prepareStatement("INSERT INTO FACTURAS (DNI_CLIENTE) VALUES (?);",
-                    PreparedStatement.RETURN_GENERATED_KEYS);
+            try (PreparedStatement sInsertFact = c.prepareStatement("INSERT INTO FACTURAS (DNI_CLIENTE) VALUES (?);");
 
                  PreparedStatement sInsertLineaFact = c.prepareStatement("INSERT INTO LINEAS_FACTURA (NUM_FACTURA,LINEA_FACTURA, CONCEPTO, CANTIDAD) VALUES (?,?,?,?);")) {
 
@@ -23,23 +21,18 @@ public class Act3_7_2 {
 
                 sInsertFact.setString(i++, "78901234X");
                 sInsertFact.executeUpdate();
-                //ResultSet rs = sInsertFact.getGeneratedKeys();
-                rs.next();
-                int numFact = rs.getInt(1);
 
                 int lineaFact = 1;
 
                 i = 1;
-
-                sInsertLineaFact.setInt(i++, numFact);
+                sInsertLineaFact.setInt(i++, 1);
                 sInsertLineaFact.setInt(i++, lineaFact++);
                 sInsertLineaFact.setString(i++, "TUERCAS");
                 sInsertLineaFact.setInt(i++, 25);
                 sInsertLineaFact.executeUpdate();
 
                 i = 1;
-
-                sInsertLineaFact.setInt(i++, numFact);
+                sInsertLineaFact.setInt(i++, 2);
                 sInsertLineaFact.setInt(i++, lineaFact++);
                 sInsertLineaFact.setString(i++, "TORNILLOS");
                 sInsertLineaFact.setInt(i++, 250);
