@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="hasta actividad 4">
-      <change afterPath="$PROJECT_DIR$/src/act7/Act3_7_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Desarrolo_Interfaces" beforeDir="false" afterPath="$PROJECT_DIR$/../Desarrolo_Interfaces" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/datosReservas.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/out/production/ProyectoFinal/com/glop/PFinal/gui/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/out/production/ProyectoFinal/com/glop/PFinal/gui/Controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/out/production/ProyectoFinal/com/glop/PFinal/gui/Vista.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/out/production/ProyectoFinal/com/glop/PFinal/gui/Vista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/out/production/ProyectoFinal/com/glop/PFinal/gui/Vista1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/out/production/ProyectoFinal/com/glop/PFinal/gui/Vista1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Vista.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Vista.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Vista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Vista1.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoFinal-1/src/com/glop/PFinal/gui/Vista1.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
