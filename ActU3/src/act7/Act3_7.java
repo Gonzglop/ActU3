@@ -7,17 +7,15 @@ import java.sql.*;
  * @version 1.0
  */
 
-
 public class Act3_7 {
 
     public static void main(String[] args) {
         //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13")) {
-            try (PreparedStatement sInsertFact = c.prepareStatement("INSERT INTO FACTURAS(DNI_CLIENTE) VALUES (?)",
+        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root")) {
+            try (PreparedStatement sInsertFact = c.prepareStatement("INSERT INTO FACTURAS (DNI_CLIENTE) VALUES (?);",
                     PreparedStatement.RETURN_GENERATED_KEYS);
 
-                 PreparedStatement sInsertLineaFact = c.prepareStatement("INSERT INTO LINEAS FACTURA" +
-                         "(NUM_FACTURA,LINEA_FACTURA, CONCEPTO, CANTIDAD) VALUES (?,?,?,?);");) {
+                 PreparedStatement sInsertLineaFact = c.prepareStatement("INSERT INTO LINEAS_FACTURA (NUM_FACTURA,LINEA_FACTURA, CONCEPTO, CANTIDAD) VALUES (?,?,?,?);")) {
 
                 c.setAutoCommit(false);
 

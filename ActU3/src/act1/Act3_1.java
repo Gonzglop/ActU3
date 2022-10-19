@@ -15,12 +15,12 @@ public class Act3_1 {
     public static void main(String[] args) {
         try {
             //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root");
             Statement s = c.createStatement();
 
             final String sqlQuery = "SELECT * FROM CLIENTES";
             final String sqlDelete = "DELETE FROM CLIENTES WHERE APELLIDOS = 'LAMIQUIZ'";
-            final String sqlUpdate = "UPDATE CLIENTES SET APELLIDOS = 'ROJAS' WHERE APELLIDOS = 'HOJAS'";
+            final String sqlUpdate = "UPDATE CLIENTES SET APELLIDOS = 'ROJAS' WHERE DNI = '8901234E'";
 
             System.out.println("---ESTADO INICIAL---");
             printQuery(s, sqlQuery);

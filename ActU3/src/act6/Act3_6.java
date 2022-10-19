@@ -16,7 +16,7 @@ public class Act3_6 {
 
     public static void main(String[] args) {
         //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13")) {
+        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root")) {
             try (PreparedStatement sInsert = c.prepareStatement("INSERT INTO CLIENTES1(DNI,APELLIDOS,CP) VALUES (?,?,?);")) {
 
                 c.setAutoCommit(false);
@@ -28,7 +28,7 @@ public class Act3_6 {
                 sInsert.setString(++i, "10109");
                 sInsert.executeUpdate();
 
-                sInsert.setString(i = 1, "765432108S");
+                sInsert.setString(i = 1, "76543210S");
                 sInsert.setString(++i, "MARQUEZ");
                 sInsert.setString(++i, "46987");
                 sInsert.executeUpdate();
@@ -59,3 +59,6 @@ public class Act3_6 {
         }
     }
 }
+    /*
+CREATE TABLE CLIENTES1 (DNI CHAR(9) NOT NULL,APELLIDOS VARCHAR(32) NOT NULL, CP INTEGER, PRIMARY KEY (DNI));
+     */

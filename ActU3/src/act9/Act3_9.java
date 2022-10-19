@@ -19,7 +19,7 @@ public class Act3_9 {
                 {"96307418R", "TORRES", "19273"}
         };
 
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13");) {
+        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root");) {
             try (PreparedStatement sInsert = c.prepareStatement("INSERT INTO CLIENTES1(DNI,APELLIDOS,CP) VALUES (?,?,?)")) {
 
                 c.setAutoCommit(false);
@@ -53,4 +53,5 @@ public class Act3_9 {
     }
 }
 
+//soportaLotes= c.getMetaData().supportsBatchUpdates(),
 

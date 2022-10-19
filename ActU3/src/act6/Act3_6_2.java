@@ -15,7 +15,7 @@ public class Act3_6_2 {
 
     public static void main(String[] args) {
         //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13")) {
+        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root")) {
             try (PreparedStatement sInsert = c.prepareStatement("INSERT INTO CLIENTES1(DNI,APELLIDOS,CP) VALUES (?,?,?);")) {
 
                 int i = 0;
@@ -25,7 +25,7 @@ public class Act3_6_2 {
                 sInsert.setString(++i, "10109");
                 sInsert.executeUpdate();
 
-                sInsert.setString(i = 1, "765432108S");
+                sInsert.setString(i = 1, "76543210S");
                 sInsert.setString(++i, "MARQUEZ");
                 sInsert.setString(++i, "46987");
                 sInsert.executeUpdate();
