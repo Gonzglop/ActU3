@@ -36,7 +36,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -138,6 +138,7 @@
       <workItem from="1666162417092" duration="7717000" />
       <workItem from="1666194773781" duration="5858000" />
       <workItem from="1666291936418" duration="19000" />
+      <workItem from="1666300621152" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="hasta actividad 4">
       <created>1665952036553</created>
