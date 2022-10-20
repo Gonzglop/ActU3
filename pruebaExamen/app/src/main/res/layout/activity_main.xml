@@ -80,5 +80,44 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#000000"/>
+
+    <RatingBar
+        android:id="@+id/miRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="7"
+        android:rating="1.0"
+        android:stepSize="1.0"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#000000"/>
+
+    <TextView
+        android:id="@+id/miEtiq2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:text="Pincha aquí"
+        android:background="@color/white"
+        />
+
+    <SeekBar
+        android:id="@+id/miSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="6"
+        android:min="0"
+        android:thumb="@color/white"
+        android:progress="0"/>
+
+
+
 
 </LinearLayout>

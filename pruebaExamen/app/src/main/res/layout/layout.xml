@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5A999">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aficiones"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="2"
+        android:useDefaultMargins="false">
+
+        <CheckBox
+            android:id="@+id/ck1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lectura" />
+
+        <CheckBox
+            android:id="@+id/ck2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teatro" />
+
+        <CheckBox
+            android:id="@+id/ck3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Senderismo" />
+
+        <CheckBox
+            android:id="@+id/ck4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fotografía" />
+
+        <CheckBox
+            android:id="@+id/ck5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escritura" />
+
+        <CheckBox
+            android:id="@+id/ck6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voleibol" />
+
+        <CheckBox
+            android:id="@+id/ck7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escalada" />
+
+        <CheckBox
+            android:id="@+id/ck8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trail" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5A999">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elige un género literario"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/grupo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fantasía" />
+
+        <RadioButton
+            android:id="@+id/rd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ciencia Ficción" />
+
+        <RadioButton
+            android:id="@+id/rd3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Narrativa" />
+
+        <RadioButton
+            android:id="@+id/rd4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Histórica" />
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5A999">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elige un deporte"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/grupo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/rd21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Running" />
+
+        <RadioButton
+            android:id="@+id/rd22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voleibol" />
+
+        <RadioButton
+            android:id="@+id/rd23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hípica" />
+
+        <RadioButton
+            android:id="@+id/rd24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patinaje" />
+    </RadioGroup>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="1"
+        android:useDefaultMargins="true">
+        <Button
+            android:id="@+id/btn1"
+            android:layout_column="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESETEAR"
+            />
+        <Button
+            android:id="@+id/btn2"
+            android:layout_column="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR"
+            />
+    </GridLayout>
+
+
+    <TextView
+        android:id="@+id/miEtiq1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/miEtiq2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/miEtiq3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        >
+    </TextView>
+
