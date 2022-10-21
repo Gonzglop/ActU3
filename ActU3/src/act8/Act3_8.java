@@ -1,5 +1,6 @@
 package act8;
 
+import javax.lang.model.element.TypeParameterElement;
 import java.sql.*;
 /*
  * @author Gonzalo López
@@ -11,26 +12,16 @@ import java.sql.*;
 public class Act3_8 {
 
     public static void main(String[] args) {
-        //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
 
         try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root");
-             CallableStatement s = c.prepareCall("{call apellidos_cliente(?)}")) {
+             CallableStatement s = c.prepareCall("{? = call apellidos_cliente(?)}")) {
 
-            s.setString(1, "78901234X");
-            //s.setInt(2, 0);
-            s.registerOutParameter(1, Types.CHAR);
-
+            s.registerOutParameter(1, Types.VARCHAR);
+            s.setString(2, "78901234X");
             s.execute();
 
-            ResultSet rs = s.getResultSet();
+            System.out.println("Apellidos: " + s.getString(1));
 
-            int inout_long = s.getInt(1);
-            System.out.println("=> inout_long: " + inout_long);
-
-            while (rs.next()) {
-
-                System.out.println("Apellidos: " + rs.getString("APELLIDOS"));
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {

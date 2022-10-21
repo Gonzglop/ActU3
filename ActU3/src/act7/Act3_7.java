@@ -10,7 +10,6 @@ import java.sql.*;
 public class Act3_7 {
 
     public static void main(String[] args) {
-        //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
         try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root")) {
             try (PreparedStatement sInsertFact = c.prepareStatement("INSERT INTO FACTURAS (DNI_CLIENTE) VALUES (?);",
                     PreparedStatement.RETURN_GENERATED_KEYS);

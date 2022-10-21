@@ -20,8 +20,7 @@ public class Act3_2 {
 
     public static void main(String[] args) {
         try {
-            //Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "user_libro_add", "pwd_libro_add");
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "FFversus13");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/libro_ad", "root", "root");
             Statement s = c.createStatement();
 
             final String sqlQuery = "SELECT * FROM CLIENTES";
