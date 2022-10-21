@@ -42,16 +42,12 @@ public class FormularioHabana extends JDialog {
 
     public FormularioHabana() {
         setSize(550,600);
-
         setContentPane(panel0);
         setModal(true);
         getRootPane().setDefaultButton(btnAceptar);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
-
         setLocationRelativeTo(null);
         iniciarJList();
-
     }
 
     private void iniciarJList(){

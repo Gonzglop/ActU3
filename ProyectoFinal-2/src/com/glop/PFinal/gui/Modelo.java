@@ -26,14 +26,6 @@ public class Modelo {
         listaReservas.add(reserva);
     }
 
-    public Reserva buscarReserva(){
-        return null;
-    }
-
-    public void eliminarReserva(Reserva reserva){
-        listaReservas.remove(reserva);
-    }
-
 
     public void cargarDatosFichero() throws IOException, ClassNotFoundException {
         File fichero = new File(RUTA);

@@ -9,6 +9,5 @@ public class Principal {
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         Modelo modelo = new Modelo();
         Controlador controlador = new Controlador(menuPrincipal,modelo);
-
     }
 }

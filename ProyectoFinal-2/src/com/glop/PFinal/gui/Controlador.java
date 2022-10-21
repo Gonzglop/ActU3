@@ -12,7 +12,6 @@ import java.util.Objects;
 
 public class Controlador implements ActionListener, WindowListener {
 
-
     private MenuPrincipal menuPrincipal;
     private Modelo modelo;
     private FormularioHabana formularioHabana;
@@ -33,7 +32,7 @@ public class Controlador implements ActionListener, WindowListener {
     }
 
 
-    public void anadirActionListeners(ActionListener listener){
+    public void anadirActionListeners(ActionListener listener) {
         menuPrincipal.salonHabanaButton.addActionListener(listener);
     }
 
@@ -47,7 +46,7 @@ public class Controlador implements ActionListener, WindowListener {
         formularioHabana.setVisible(true);
     }
 
-    private void anadirWindowListeners(WindowListener listener){
+    private void anadirWindowListeners(WindowListener listener) {
         formularioHabana.addWindowListener(listener);
     }
 
@@ -56,31 +55,28 @@ public class Controlador implements ActionListener, WindowListener {
 
         String comando = e.getActionCommand();
 
-        switch (comando){
+        switch (comando) {
             case "Aceptar":
                 String cadenaErrores = "";
                 cadenaErrores = compruebaCamposVacios(cadenaErrores);
 
-                if(Objects.equals(cadenaErrores, "")){
-                    modelo.altaReserva(
-                            formularioHabana.txtNombre.getText(), formularioHabana.txtTlfno.getText(), formularioHabana.txtDireccion.getText(),
-                            formularioHabana.dpFecha.getDate(),obtieneRadioBtn(), (Integer) formularioHabana.txtNumPersonas.getValue(),
-                            String.valueOf(formularioHabana.cbTipoCocina.getSelectedItem()), (Integer) formularioHabana.spinNumJornadas.getValue(),
-                            formularioHabana.checkHabitaciones.isSelected(), Integer.parseInt(formularioHabana.txtNumHabitaciones.getText()),
-                            String.valueOf(formularioHabana.cbTipoHabitacion.getSelectedItem())
-                    );
+                if (Objects.equals(cadenaErrores, "")) {
+
+                    realizaReserva();
                     refrescarListaReservas();
+
                     JOptionPane.showMessageDialog(null, modelo.getListaReservas(), "¡Reserva realizada con éxito!", JOptionPane.INFORMATION_MESSAGE);
-                }else {
+                } else {
                     JOptionPane.showMessageDialog(null, cadenaErrores, "No se ha podido realizar la reserva", JOptionPane.WARNING_MESSAGE);
                 }
+                break;
 
             case "Cancelar":
-                formularioHabana.dlm.clear();
+                formularioHabana.dispose();
                 break;
             case "Congreso":
                 activaPanel2();
-                formularioHabana.sm.setValue(1);
+                formularioHabana.sm.setValue(0);
                 formularioHabana.sm.setMaximum(50);
                 break;
             case "Banquete":
@@ -89,7 +85,7 @@ public class Controlador implements ActionListener, WindowListener {
                 break;
             case "Jornada":
                 desactivaPanel2();
-                formularioHabana.sm.setValue(1);
+                formularioHabana.sm.setValue(0);
                 formularioHabana.sm.setMaximum(50);
                 break;
             case "Habitaciones":
@@ -105,39 +101,66 @@ public class Controlador implements ActionListener, WindowListener {
     }
 
     private void realizaReserva() {
+        modelo.altaReserva(
+                formularioHabana.txtNombre.getText(),
+                formularioHabana.txtTlfno.getText(),
+                formularioHabana.txtDireccion.getText(),
+                formularioHabana.dpFecha.getDate(),
+                obtieneRadioBtn(),
+                (Integer) formularioHabana.txtNumPersonas.getValue(),
+                String.valueOf(formularioHabana.cbTipoCocina.getSelectedItem()),
+                (Integer) formularioHabana.spinNumJornadas.getValue(),
+                formularioHabana.checkHabitaciones.isSelected(),
+                Integer.parseInt(formularioHabana.txtNumHabitaciones.getText()),
+                String.valueOf(formularioHabana.cbTipoHabitacion.getSelectedItem())
+        );
 
     }
 
     private String compruebaCamposVacios(String cadenaErrores) {
-        if(Objects.equals(formularioHabana.txtNombre.getText(), "")){
+        if (Objects.equals(formularioHabana.txtNombre.getText(), "")) {
             cadenaErrores += "No has introducido el nombre\n";
         }
-        if(Objects.equals(formularioHabana.txtTlfno.getText(), "")){
+        if (Objects.equals(formularioHabana.txtTlfno.getText(), "")) {
             cadenaErrores += "No has introducido el teléfono\n";
         }
-        if(Objects.equals(formularioHabana.txtDireccion.getText(), "")){
+        if (Objects.equals(formularioHabana.txtDireccion.getText(), "")) {
             cadenaErrores += "No has introducido la dirección\n";
         }
-        if(formularioHabana.dpFecha.getDate() == null){
+        if (formularioHabana.dpFecha.getDate() == null) {
             cadenaErrores += "No has introducido la fecha\n";
         }
-        if(formularioHabana.txtNumPersonas.getValue()=="" | (int)formularioHabana.txtNumPersonas.getValue()<=0 ){
+        if (formularioHabana.txtNumPersonas.getValue() == "" | (int) formularioHabana.txtNumPersonas.getValue() <= 0) {
             cadenaErrores += "No has introducido el nº de personas\n";
         }
 
-        if(String.valueOf(formularioHabana.cbTipoCocina.getSelectedItem())=="Seleccione el tipo de cocina"){
+        if (String.valueOf(formularioHabana.cbTipoCocina.getSelectedItem()) == "Seleccione el tipo de cocina") {
             cadenaErrores += "No has seleccionado el tipo de cocina\n";
+        }
+
+        if (formularioHabana.rbtnCongreso.isSelected()) {
+            if ((int) formularioHabana.spinNumJornadas.getValue() <= 0) {
+                cadenaErrores += "No has introducido el nº de jornadas\n";
+            }
+            if (formularioHabana.checkHabitaciones.isSelected()) {
+                if (Integer.parseInt(formularioHabana.txtNumHabitaciones.getText()) <= 0 | Objects.equals(formularioHabana.txtNumHabitaciones.getText(), "")) {
+                    cadenaErrores += "No has introducido el nº de habitaciones\n";
+                }
+                if (String.valueOf(formularioHabana.cbTipoHabitacion.getSelectedItem()) == "Seleccione...") {
+                    cadenaErrores += "No has seleccionado el tipo de habitación\n";
+                }
+            }
         }
         return cadenaErrores;
     }
 
     private void activDesactivPanel3() {
-        if (formularioHabana.checkHabitaciones.isSelected()){
+        if (formularioHabana.checkHabitaciones.isSelected()) {
             formularioHabana.nHabitaciones.setEnabled(true);
             formularioHabana.txtNumHabitaciones.setEnabled(true);
             formularioHabana.tipoHabitacion.setEnabled(true);
             formularioHabana.cbTipoHabitacion.setEnabled(true);
-        }else{
+        } else {
             formularioHabana.nHabitaciones.setEnabled(false);
             formularioHabana.txtNumHabitaciones.setEnabled(false);
             formularioHabana.tipoHabitacion.setEnabled(false);
@@ -148,34 +171,34 @@ public class Controlador implements ActionListener, WindowListener {
 
     private void refrescarListaReservas() {
         formularioHabana.dlm.clear();
-         for(Reserva reserva : modelo.getListaReservas()){
+        for (Reserva reserva : modelo.getListaReservas()) {
             formularioHabana.dlm.addElement(reserva);
         }
     }
 
-    private String obtieneRadioBtn(){
+    private String obtieneRadioBtn() {
         String rBtnValor = null;
-        if (formularioHabana.rbtnJornada.isSelected()){
-            rBtnValor= "Jornada";
-        }else if (formularioHabana.rbtnBanquete.isSelected()){
-            rBtnValor= "Banquete";
-        }else {
-            rBtnValor= "Congreso";
+        if (formularioHabana.rbtnJornada.isSelected()) {
+            rBtnValor = "Jornada";
+        } else if (formularioHabana.rbtnBanquete.isSelected()) {
+            rBtnValor = "Banquete";
+        } else {
+            rBtnValor = "Congreso";
         }
         return rBtnValor;
     }
 
 
-    private void activaPanel2(){
-            if (formularioHabana.rbtnCongreso.isSelected()){
-                formularioHabana.spinNumJornadas.setEnabled(true);
-                formularioHabana.checkHabitaciones.setEnabled(true);
-                formularioHabana.nJornadasLbl.setEnabled(true);
-            }
+    private void activaPanel2() {
+        if (formularioHabana.rbtnCongreso.isSelected()) {
+            formularioHabana.spinNumJornadas.setEnabled(true);
+            formularioHabana.checkHabitaciones.setEnabled(true);
+            formularioHabana.nJornadasLbl.setEnabled(true);
+        }
     }
 
-    private void desactivaPanel2(){
-        if (!formularioHabana.rbtnCongreso.isSelected()){
+    private void desactivaPanel2() {
+        if (!formularioHabana.rbtnCongreso.isSelected()) {
             formularioHabana.spinNumJornadas.setEnabled(false);
             formularioHabana.checkHabitaciones.setEnabled(false);
             formularioHabana.nJornadasLbl.setEnabled(false);
@@ -186,6 +209,7 @@ public class Controlador implements ActionListener, WindowListener {
             formularioHabana.checkHabitaciones.setSelected(false);
         }
     }
+
     @Override
     public void windowOpened(WindowEvent e) {
     }
