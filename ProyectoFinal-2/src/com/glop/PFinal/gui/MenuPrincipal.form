@@ -68,7 +68,6 @@
             </constraints>
             <properties>
               <font size="36" style="1"/>
-              <icon value="img.png"/>
               <text value="Haz tu reserva"/>
             </properties>
           </component>
@@ -78,7 +77,6 @@
               <forms/>
             </constraints>
             <properties>
-              <icon value="img_1.png"/>
               <text value=""/>
             </properties>
           </component>
@@ -88,7 +86,6 @@
               <forms/>
             </constraints>
             <properties>
-              <icon value="img_2.png"/>
               <text value=""/>
             </properties>
           </component>

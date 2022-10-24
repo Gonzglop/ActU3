@@ -1,17 +1,17 @@
 package filosofo;
 
 public class Filosofo extends Thread {
-     
+
     private Mesa mesa;
     private int comensal;
     private int indiceComensal;
-     
+
     public Filosofo(Mesa m, int comensal){
         this.mesa = m;
         this.comensal = comensal;
         this.indiceComensal = comensal -1;
     }
-     
+
     public void run(){
         while (true){
             this.pensando();
@@ -23,7 +23,7 @@ public class Filosofo extends Thread {
             this.mesa.dejarTenedores(this.indiceComensal);
         }
     }
-     
+
     public void pensando(){
         System.out.println("Filosofo " + comensal + " está pensando");
         try {
@@ -33,7 +33,7 @@ public class Filosofo extends Thread {
         }
     }
 
-     
+
     public void comiendo(){
         System.out.println("Filosofo " + comensal + " está comiendo");
         try {
