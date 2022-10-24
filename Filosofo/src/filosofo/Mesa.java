@@ -1,11 +1,16 @@
 package filosofo;
 
+import java.util.concurrent.Semaphore;
+
 public class Mesa {
 
     private boolean[] tenedores;
+    Semaphore semaforo;
 
-    public Mesa(int numTenedores){
+    public Mesa(int numTenedores, int permisos){
+
         this.tenedores = new boolean[numTenedores];
+        semaforo = new Semaphore(permisos);
     }
 
     public int tenedorIzquierda(int i){

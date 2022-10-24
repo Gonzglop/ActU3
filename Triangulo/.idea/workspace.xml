@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91e29281-3e90-4299-9bac-ed7c3bea8879" name="Changes" comment="" />
+    <list default="true" id="91e29281-3e90-4299-9bac-ed7c3bea8879" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ActU3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ActU3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Filosofo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Filosofo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Mesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Mesa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Filosofo/out/production/Filosofo/filosofo/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/src/filosofo/Filosofo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Filosofo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/src/filosofo/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Mesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Filosofo/src/filosofo/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Filosofo/src/filosofo/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Triangulo/Triangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Triangulo/Triangulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Triangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangulo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="2GYE4wcdW9ptLTGRBqiHzGJ7PhY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -28,7 +52,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Tuberia">
     <configuration name="Triangulo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Triangulo" />
       <module name="Triangulo" />
@@ -36,8 +60,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tuberia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tuberia" />
+      <module name="Triangulo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tuberia" />
         <item itemvalue="Application.Triangulo" />
       </list>
     </recent_temporary>
@@ -50,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666556930380</updated>
-      <workItem from="1666556932136" duration="2120000" />
+      <workItem from="1666556932136" duration="6763000" />
     </task>
     <servers />
   </component>
@@ -67,5 +99,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
