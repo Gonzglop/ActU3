@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="hasta actividad 4">
-      <change afterPath="$PROJECT_DIR$/../Triangulo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Triangulo/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Triangulo/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Triangulo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Triangulo/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Triangulo/out/production/Triangulo/Triangulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5f228606-10e3-4780-a7af-94aac8ca0cf1" name="Changes" comment="hasta actividad 4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

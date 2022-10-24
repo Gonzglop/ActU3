@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91e29281-3e90-4299-9bac-ed7c3bea8879" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Triangulo/Triangulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActU3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ActU3/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="91e29281-3e90-4299-9bac-ed7c3bea8879" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666556930380</updated>
-      <workItem from="1666556932136" duration="1819000" />
+      <workItem from="1666556932136" duration="2120000" />
     </task>
     <servers />
   </component>
