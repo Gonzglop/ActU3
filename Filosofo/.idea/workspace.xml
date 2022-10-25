@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c6617e-d9fc-47ea-b5be-fe56943946d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ActU3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ActU3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Filosofo/filosofo/Filosofo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Filosofo/filosofo/Filosofo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Filosofo/filosofo/Mesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Filosofo/filosofo/Mesa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Filosofo/filosofo/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Filosofo/filosofo/Principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filosofo/Filosofo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filosofo/Filosofo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filosofo/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filosofo/Mesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filosofo/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filosofo/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-2.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoFinal-2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Triangulo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Triangulo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Triangulo/out/production/Triangulo/Triangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Triangulo/out/production/Triangulo/Triangulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Triangulo/src/Triangulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Triangulo/src/Triangulo.java" afterDir="false" />
+    <list default="true" id="ae91311a-a4a6-4e00-9974-7597514760ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Tema4/app/src/main/res/layout/layout1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +12,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2GGd3FNl48NPEvjFSSPHnFVyiWI" />
+  <component name="ProjectId" id="2GZXBnphZcL0K3ydj4EcBgPkzqp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,13 +21,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="filosofo.Principal" />
+      <module name="Filosofo" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="filosofo.*" />
@@ -61,16 +46,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44c6617e-d9fc-47ea-b5be-fe56943946d0" name="Changes" comment="" />
-      <created>1666018653523</created>
+      <changelist id="ae91311a-a4a6-4e00-9974-7597514760ac" name="Changes" comment="" />
+      <created>1666596947979</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666018653523</updated>
-      <workItem from="1666018655228" duration="5674000" />
-      <workItem from="1666627793944" duration="2392000" />
-      <workItem from="1666631089465" duration="81000" />
-      <workItem from="1666631183116" duration="56000" />
-      <workItem from="1666631270196" duration="1259000" />
+      <updated>1666596947979</updated>
+      <workItem from="1666596952881" duration="2961000" />
     </task>
     <servers />
   </component>
@@ -87,6 +68,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
