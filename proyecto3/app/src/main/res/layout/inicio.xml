@@ -26,5 +26,11 @@
         android:layout_gravity="center"
         android:fontFamily="sans-serif-light"
         android:text="Disfruta de una experiencia totalmente ANDROID"/>
-
+    <Button
+        android:id="@+id/btnEmpezar"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="COMENZAR"/>
 </LinearLayout>
