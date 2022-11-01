@@ -5,9 +5,9 @@ public class insertaDatos {
 
     public static void main(String[] args) {
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/concesionario", "root", "root");
-            PreparedStatement sInsertCliente = c.prepareStatement("INSERT INTO CLIENTE(DNI,NOMBRE,APELLIDOS,DIRECCION,EMAIL,TELEFONO) VALUES (?,?,?,?,?,?);");
-            PreparedStatement sInsertCoche = c.prepareStatement("INSERT INTO COCHE(MATRICULA,MODELO,MARCA,COLOR,DNI_CLIENTE) VALUES (?,?,?,?,?);");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/concesionario", "root", "FFversus13");
+            PreparedStatement sInsertCliente = c.prepareStatement("INSERT INTO CLIENTE(DNI,NOMBRE,APELLIDOS,DIRECCION,EMAIL,TELEFONO) VALUES (?,?,?,?,?,?)");
+            PreparedStatement sInsertCoche = c.prepareStatement("INSERT INTO COCHE(MATRICULA,MODELO,MARCA,COLOR,DNI_CLIENTE) VALUES (?,?,?,?,?)");
 
             int i = 0;
 
@@ -36,7 +36,7 @@ public class insertaDatos {
             sInsertCoche.setString(++i, "54320198V");
             sInsertCoche.executeUpdate();
 
-            sInsertCoche.setString(++i, "1414ASD");
+            sInsertCoche.setString(i=1, "1414ASD");
             sInsertCoche.setString(++i, "YARIS");
             sInsertCoche.setString(++i, "TOYOTA");
             sInsertCoche.setString(++i, "BLANCO");

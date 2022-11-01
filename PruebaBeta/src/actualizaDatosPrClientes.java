@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class actualizaDatosPrClientes {
     public static void main(String[] args) {
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/concesionario", "root", "root")) {
+        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/concesionario", "root", "FFversus13")) {
             try (PreparedStatement sInsert = c.prepareStatement("UPDATE CLIENTE SET TELEFONO = '611460677' WHERE DNI = ?")) {
 
                 sInsert.setString(1, "54320198V");

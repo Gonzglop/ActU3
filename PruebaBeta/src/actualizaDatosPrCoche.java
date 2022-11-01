@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class actualizaDatosPrCoche {
     public static void main(String[] args) {
-        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/concesionario", "root", "root")) {
+        try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/concesionario", "root", "FFversus13")) {
             try (PreparedStatement sInsert = c.prepareStatement("UPDATE COCHE SET MARCA = 'SMART' WHERE MATRICULA = ?")) {
 
                 sInsert.setString(1, "1414ASD");

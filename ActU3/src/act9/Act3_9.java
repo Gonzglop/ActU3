@@ -19,7 +19,7 @@ public class Act3_9 {
         try (Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/libro_ad", "root", "root");) {
 
             boolean soportaLotes = c.getMetaData().supportsBatchUpdates();
-            if(soportaLotes) {
+            if (soportaLotes) {
 
                 System.out.println("Esta BBDD proporciona soporte para lotes");
 
@@ -59,13 +59,13 @@ public class Act3_9 {
                     c.setAutoCommit(false);
 
                     int nCli = 0;
-                        for (int i = 0; i < datosClientes[nCli].length; i++) {
+                    for (int i = 0; i < datosClientes[nCli].length; i++) {
 
-                            sInsert.setString(i + 1, datosClientes[nCli][i]);
-                        }
+                        sInsert.setString(i + 1, datosClientes[nCli][i]);
+                    }
                     sInsert.executeUpdate();
 
-                        nCli++;
+                    nCli++;
                     for (int i = 0; i < datosClientes[nCli].length; i++) {
 
                         sInsert.setString(i + 1, datosClientes[nCli][i]);

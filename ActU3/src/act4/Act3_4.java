@@ -22,6 +22,8 @@ public class Act3_4 {
             rs.last();
             System.out.println("Nº registros: " + rs.getRow());
 
+            rs.beforeFirst();
+
             int i = 1;
             while (rs.next()) {
                 System.out.println("[" + (i++) + "]");

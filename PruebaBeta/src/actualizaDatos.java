@@ -3,7 +3,7 @@ import java.sql.*;
 public class actualizaDatos {
     public static void main(String[] args) {
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/concesionario", "root", "root");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/concesionario", "root", "FFversus13");
             Statement s = c.createStatement();
 
             final String sqlUpdate = "UPDATE CLIENTE SET APELLIDOS = 'López' WHERE DNI = '54320198V'";

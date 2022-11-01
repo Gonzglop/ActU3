@@ -4,7 +4,7 @@ public class muestraDatos {
 
     public static void main(String[] args) {
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3307/concesionario", "root", "root");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/concesionario", "root", "FFversus13");
             Statement s = c.createStatement();
 
             final String sqlQueryCliente = "SELECT * FROM CLIENTE";
