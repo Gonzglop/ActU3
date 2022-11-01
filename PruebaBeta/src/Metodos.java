@@ -3,9 +3,11 @@ import java.sql.*;
 
 public class Metodos {
 
-    public static void createTable(Statement s, String sqlCli) {
+    public static void createTable(Connection c, String sglTable) {
         try {
-            s.execute(sqlCli);
+            Statement s = c.createStatement();
+            s.execute(sglTable);
+            s.close();
             JOptionPane.showMessageDialog(null, "Tabla creada con éxito.");
 
         } catch (SQLException e) {
@@ -14,23 +16,23 @@ public class Metodos {
     }
 
 
-    public static void insert(Connection c, PreparedStatement ps, int i, String insertClientes, String[][] arrayClientes) {
+    public static void insert(Connection c, String sqlInsert, String[][] array) {
 
         try {
-            ps = c.prepareStatement(insertClientes);
+            PreparedStatement ps = c.prepareStatement(sqlInsert);
             c.setAutoCommit(false);
 
-            for (int nReg = 0; nReg < arrayClientes.length; nReg++) {
-
-                for (i = 0; i < arrayClientes[nReg].length; i++) {
-
-                    ps.setString(i + 1, arrayClientes[nReg][i]);
+            for (int nReg = 0; nReg < array.length; nReg++) {
+                for (int i = 0; i < array[nReg].length; i++) {
+                    ps.setString(i + 1, array[nReg][i]);
                 }
                 ps.addBatch();
             }
             ps.executeBatch();
 
             c.commit();
+            ps.close();
+
             JOptionPane.showMessageDialog(null, "Datos insertados con éxito.");
 
         } catch (SQLException e) {
@@ -47,14 +49,15 @@ public class Metodos {
     }
 
 
-    public static void selectFrom(Statement s, ResultSet rs, int i, String queryCliente) {
+    public static void selectFrom(Connection c, String sqlQuery) {
 
         try {
-            rs = s.executeQuery(queryCliente);
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery(sqlQuery);
             ResultSetMetaData rsmd = rs.getMetaData();
+            int i = 0;
 
             while (rs.next()) {
-
                 String registro = "";
 
                 for (int j = 1; j <= rsmd.getColumnCount(); j++) {
@@ -65,6 +68,7 @@ public class Metodos {
                 );
             }
             rs.close();
+            s.close();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error: No se ha podido ejecutar la consulta.");
@@ -72,14 +76,18 @@ public class Metodos {
     }
 
 
-    public static void updatePS(PreparedStatement ps, Connection c, int i, String updateCochePs, String matricula) {
+    public static void updatePS(Connection c,String sqlUpdate, String newData) {
+        int i = 0;
+        int nFil;
 
         try {
-            ps = c.prepareStatement(updateCochePs);
-            ps.setString(++i, matricula);
-            ps.executeUpdate();
+            PreparedStatement ps = c.prepareStatement(sqlUpdate);
+            ps.setString(++i, newData);
+            nFil = ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Datos actualizados con éxito.");
+            ps.close();
+
+            JOptionPane.showMessageDialog(null, "Datos actualizados con éxito.\n"+ nFil +" filas modificadas.");
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error: No se han podido actualizar los datos.");
@@ -87,11 +95,15 @@ public class Metodos {
     }
 
 
-    public static void update(Statement s, String updateCliente) {
-        try {
-            s.executeUpdate(updateCliente);
+    public static void update(Connection c, String sqlUpdate) {
+        int nFil;
 
-            JOptionPane.showMessageDialog(null, "Datos actualizados con éxito.");
+        try {
+            Statement s = c.createStatement();
+            nFil = s.executeUpdate(sqlUpdate);
+
+            s.close();
+            JOptionPane.showMessageDialog(null, "Datos actualizados con éxito.\n"+ nFil +" filas modificadas.");
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error: No se han podido actualizar los datos.");

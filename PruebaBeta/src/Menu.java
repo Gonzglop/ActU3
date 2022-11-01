@@ -3,20 +3,14 @@ import javax.swing.JOptionPane;
 
 public class Menu {
 
-    static int select = -1; //opción elegida del usuario
+    private static int select = -1; //opción elegida del usuario
 
     public static void main(String[] args) {
         try (Connection c = DriverManager.getConnection(LeeConfig.generaRutaConex(), LeeConfig.usuario, LeeConfig.password)) {
 
-            Statement s = c.createStatement();
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            int i = 0;
-
             //Mientras la opción elegida sea 0, preguntamos al usuario
             while (select != 0) {
                 //Try catch para evitar que el programa termine si hay un error
-
                 String lectura = JOptionPane.showInputDialog(null, "Elige una opción:\n" +
                         "\n1. Crear tabla CLIENTE" +
                         "\n2. Crear tabla COCHE" +
@@ -29,6 +23,7 @@ public class Menu {
                         "\n9. Actualizar tabla COCHE utilizando sentencias preparadas" +
                         "\n10.Listar el nombre de los clientes que compraron un tipo de coche determinado" +
                         "\n\n0. Salir\n");
+
                 //Recoger una variable por consola
                 try {
                     select = Integer.parseInt(lectura);
@@ -40,43 +35,43 @@ public class Menu {
                 //Switch case en Java
                 switch (select) {
                     case 1:
-                        Metodos.createTable(s, SQL.tableCliente);
+                        Metodos.createTable(c, SQL.tableCliente);
                         break;
 
                     case 2:
-                        Metodos.createTable(s, SQL.tableCoche);
+                        Metodos.createTable(c, SQL.tableCoche);
                         break;
 
                     case 3:
-                        Metodos.insert(c, ps, i, SQL.insertClientes, Datos.arrayClientes);
+                        Metodos.insert(c, SQL.insertClientes, Datos.arrayClientes);
                         break;
 
                     case 4:
-                        Metodos.insert(c, ps, i, SQL.insertCoches, Datos.arrayCoches);
+                        Metodos.insert(c, SQL.insertCoches, Datos.arrayCoches);
                         break;
 
                     case 5:
-                        Metodos.selectFrom(s, rs, i, SQL.queryCliente);
+                        Metodos.selectFrom(c, SQL.queryCliente);
                         break;
 
                     case 6:
-                        Metodos.selectFrom(s, rs, i, SQL.queryCoche);
+                        Metodos.selectFrom(c, SQL.queryCoche);
                         break;
 
                     case 7:
-                        Metodos.update(s, SQL.updateCliente);
+                        Metodos.update(c, SQL.updateCliente);
                         break;
 
                     case 8:
-                        Metodos.updatePS(ps, c, i, SQL.updateClientePs, Datos.dni);
+                        Metodos.updatePS(c, SQL.updateClientePs, Datos.dni);
                         break;
 
                     case 9:
-                        Metodos.updatePS(ps, c, i, SQL.updateCochePs, Datos.matricula);
+                        Metodos.updatePS(c, SQL.updateCochePs, Datos.matricula);
                         break;
 
                     case 10:
-                        Metodos.selectFrom(s, rs, i, SQL.queryComp);
+                        Metodos.selectFrom(c, SQL.queryComp);
                         break;
 
                     case 0:
@@ -87,6 +82,7 @@ public class Menu {
                         JOptionPane.showMessageDialog(null, "Número no reconocido");
                         break;
                 }
+
             }
 
         } catch (SQLException e) {

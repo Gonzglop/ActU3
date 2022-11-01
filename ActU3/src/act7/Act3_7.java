@@ -19,7 +19,6 @@ public class Act3_7 {
                 c.setAutoCommit(false);
 
                 int i = 1;
-
                 sInsertFact.setString(i++, "78901234X");
                 sInsertFact.executeUpdate();
                 ResultSet rs = sInsertFact.getGeneratedKeys();
@@ -27,9 +26,7 @@ public class Act3_7 {
                 int numFact = rs.getInt(1);
 
                 int lineaFact = 1;
-
                 i = 1;
-
                 sInsertLineaFact.setInt(i++, numFact);
                 sInsertLineaFact.setInt(i++, lineaFact++);
                 sInsertLineaFact.setString(i++, "TUERCAS");
@@ -37,7 +34,6 @@ public class Act3_7 {
                 sInsertLineaFact.executeUpdate();
 
                 i = 1;
-
                 sInsertLineaFact.setInt(i++, numFact);
                 sInsertLineaFact.setInt(i++, lineaFact++);
                 sInsertLineaFact.setString(i++, "TORNILLOS");
