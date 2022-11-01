@@ -10,6 +10,7 @@ public class EscribeConfig {
         String miContrasena = "FFversus13";
         String elServidor = "localhost";
         String elPuerto = "3306";
+        String laBBDD = "concesionario";
 
         Properties configuracion = new Properties();
 
@@ -17,6 +18,7 @@ public class EscribeConfig {
         configuracion.setProperty("password", miContrasena);
         configuracion.setProperty("server", elServidor);
         configuracion.setProperty("port", elPuerto);
+        configuracion.setProperty("database", laBBDD);
         try {
             configuracion.store(new FileOutputStream("configuracion.props"), "Fichero de configuracion");
         } catch ( FileNotFoundException fnfe ) {

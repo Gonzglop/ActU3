@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class LeerConfig {
+public class LeeConfig {
     static String usuario = "";
     static String password = "";
     static String servidor = "";
@@ -12,10 +12,7 @@ public class LeerConfig {
     static String url = "";
 
     public static void main(String[] args) {
-
         generaRutaConex();
-
-        //System.out.printf("%s%n%s%n%s%n%d",usuario,password,servidor,puerto);
     }
 
     public static String generaRutaConex() {
@@ -27,8 +24,8 @@ public class LeerConfig {
             password = configuracion.getProperty("password");
             servidor = configuracion.getProperty("server");
             puerto = Integer.parseInt(configuracion.getProperty("port"));
+            bd = configuracion.getProperty("database");
 
-            bd = "concesionario";
             url = "jdbc:mysql://"+servidor+":"+puerto+"/"+bd;
 
         } catch ( FileNotFoundException fnfe ) {
