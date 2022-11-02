@@ -1,15 +1,7 @@
 #Fichero de configuracion
-<<<<<<< HEAD
 #Wed Nov 02 18:21:50 CET 2022
 server=localhost
 password=FFversus13
 database=iesbelen
 port=3306
-=======
-#Wed Nov 02 12:38:51 CET 2022
-server=localhost
-password=root
-database=concesionario
-port=3307
->>>>>>> 91a9b25b3b2686c42a9a5c1460960266f34c5cea
 user=root

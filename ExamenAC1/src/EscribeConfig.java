@@ -7,17 +7,10 @@ public class EscribeConfig {
 
     public static void main(String[] args) {
         String miUsuario = "root";
-<<<<<<< HEAD
         String miContrasena = "FFversus13";
         String elServidor = "localhost";
         String elPuerto = "3306";
         String laBBDD = "iesbelen";
-=======
-        String miContrasena = "root";
-        String elServidor = "localhost";
-        String elPuerto = "3307";
-        String laBBDD = "concesionario";
->>>>>>> 91a9b25b3b2686c42a9a5c1460960266f34c5cea
 
         Properties configuracion = new Properties();
 
