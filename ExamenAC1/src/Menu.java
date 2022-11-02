@@ -11,6 +11,7 @@ public class Menu {
             //Mientras la opción elegida sea 0, preguntamos al usuario
             while (select != 0) {
                 //Try catch para evitar que el programa termine si hay un error
+<<<<<<< HEAD
                 String lectura = JOptionPane.showInputDialog(null, "ELIGE UNA OPCIÓN:\n" +
                         "\n\n1. Crear la base de datos (estructura) de forma segura." +
                         "\n\n2. Realizar la carga inicial de datos de forma segura." +
@@ -20,6 +21,20 @@ public class Menu {
                         "\n\n6. Listar por asignatura: total de alumnos, porcentaje de alumnos aprobados y mayor nota." +
 
                         "\n\n\n0. SALIR\n\n");
+=======
+                String lectura = JOptionPane.showInputDialog(null, "Elige una opción:\n" +
+                        "\n1. Crear tabla CLIENTE" +
+                        "\n2. Crear tabla COCHE" +
+                        "\n3. Insertar datos en la tabla CLIENTE" +
+                        "\n4. Insertar datos en la tabla COCHE" +
+                        "\n5. Recuperar datos de la tabla CLIENTE" +
+                        "\n6. Recuperar datos de la tabla COCHE" +
+                        "\n7. Actualizar tabla CLIENTE" +
+                        "\n8. Actualizar tabla CLIENTE utilizando sentencias preparadas" +
+                        "\n9. Actualizar tabla COCHE utilizando sentencias preparadas" +
+                        "\n10.Listar el nombre de los clientes que compraron un tipo de coche determinado" +
+                        "\n\n0. Salir\n");
+>>>>>>> 91a9b25b3b2686c42a9a5c1460960266f34c5cea
 
                 //Recoger una variable por consola
                 try {
@@ -32,6 +47,7 @@ public class Menu {
                 //Switch case en Java
                 switch (select) {
                     case 1:
+<<<<<<< HEAD
                         CreaEstructura.createTable(c,SQL.dropTablesNotas,SQL.dropTablesAlumnos,SQL.dropTablesAsignaturas, SQL.tableAlumnos, SQL.tableAsignaturas, SQL.tableNotas, SQL.alterTableDni, SQL.alterTableCod);
                         break;
 
@@ -52,6 +68,45 @@ public class Menu {
                         break;
                     case 6:
                         Listar.selectFrom(c,SQL.queryComp);
+=======
+                        Metodos.createTable(c, SQL.tableCliente);
+                        break;
+
+                    case 2:
+                        Metodos.createTable(c, SQL.tableCoche);
+                        break;
+
+                    case 3:
+                        Metodos.insert(c, SQL.insertClientes, Datos.arrayClientes);
+                        break;
+
+                    case 4:
+                        Metodos.insert(c, SQL.insertCoches, Datos.arrayCoches);
+                        break;
+
+                    case 5:
+                        Metodos.selectFrom(c, SQL.queryCliente);
+                        break;
+
+                    case 6:
+                        Metodos.selectFrom(c, SQL.queryCoche);
+                        break;
+
+                    case 7:
+                        Metodos.update(c, SQL.updateCliente);
+                        break;
+
+                    case 8:
+                        Metodos.updatePS(c, SQL.updateClientePs, Datos.dni);
+                        break;
+
+                    case 9:
+                        Metodos.updatePS(c, SQL.updateCochePs, Datos.matricula);
+                        break;
+
+                    case 10:
+                        Metodos.selectFrom(c, SQL.queryComp);
+>>>>>>> 91a9b25b3b2686c42a9a5c1460960266f34c5cea
                         break;
 
                     case 0:
@@ -62,6 +117,10 @@ public class Menu {
                         JOptionPane.showMessageDialog(null, "Número no reconocido");
                         break;
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91a9b25b3b2686c42a9a5c1460960266f34c5cea
             }
 
         } catch (SQLException e) {

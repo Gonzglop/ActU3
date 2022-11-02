@@ -10,28 +10,46 @@ public class Productor extends Thread {
     static int productos[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 
     public void run(){
-        while (Consumidor.sumatorio<=2000)
-        introduceProductos();
+        while (Consumidor.sumatorio<=100) {
+            try {
+                introduceProductos();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void introduceProductos(){
+    public  void introduceProductos() throws InterruptedException {
         for (int i = 0; i <productos.length; i++) {
-            if (productos[i]<0){
-                try {
-                    semaphore.acquire();
+            introduceProductos2(i);
+        }
+    }
 
-                    productos[i] = (int) Math.abs(Math.random()*1000);
-                    System.out.println("Posición:" + i + " .Se genera valor : " + productos[i]);
-                    sleep(1000);
+    private synchronized void introduceProductos2(int i) throws InterruptedException {
+        if (Principal.cont==10){
+            System.out.println(this.getName() + "El array está lleno.");
+            this.wait();
+        }else {
+            this.notify();
+        }
+        if (productos[i]<0){
+            try {
+                semaphore.acquire();
 
-                    semaphore.release();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                productos[i] = (int) Math.abs(Math.random()*10)+1;
+                System.out.println(this.getName()+"Posición " + i + " .Se genera valor : " + productos[i]);
 
-            }else{
-                //System.out.println("Posición ocupada");
+                Principal.cont++;
+                System.out.println(Principal.cont);
+                sleep(1000);
+
+                semaphore.release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+        }else{
+            System.out.println("Posición ocupada");
         }
     }
 }

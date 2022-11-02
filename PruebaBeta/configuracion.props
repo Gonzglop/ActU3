@@ -1,7 +1,7 @@
 #Fichero de configuracion
-#Tue Nov 01 17:51:09 CET 2022
+#Wed Nov 02 09:30:21 CET 2022
 server=localhost
-password=FFversus13
+password=root
 database=concesionario
-port=3306
+port=3307
 user=root

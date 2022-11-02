@@ -14,22 +14,22 @@ public class MainActivity extends AppCompatActivity {
     public void mandar_mensaje(View view){
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT,"¿A qué hora quedamos?");
+        intent.putExtra(Intent.EXTRA_TEXT,"¡Hola!¿cómo estás?");
         startActivity(intent);
     }
     public void abrirPagina(View view){
         Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("http://www.iesbelen.org/"));
+                Uri.parse("https://educacionadistancia.juntadeandalucia.es/centros/malaga/"));
         startActivity(intent);
     }
     public void llamarTelefono(View view){
         Intent intent = new
-                Intent(Intent.ACTION_DIAL,Uri.parse("tel:000000000"));
+                Intent(Intent.ACTION_DIAL,Uri.parse("tel:611460666"));
         startActivity(intent);
     }
     public void verMapa(View view){
         Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("geo:36.695804,-4.457127?z=18"));
+                Uri.parse("geo:36.692540, -4.440447?z=18"));
         startActivity(intent);
     }
     public void tomarFoto(View view){
@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
     public void mandarCorreo(View view){
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT,"asunto");
-        intent.putExtra(Intent.EXTRA_TEXT,"texto del correo");
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Dudas Android");
+        intent.putExtra(Intent.EXTRA_TEXT,"Error al usar ACTION_CALL");
         intent.putExtra(Intent.EXTRA_EMAIL, new
-                String[]{"rbaebar@g.educaand.es"});
+                String[]{"glopcas222@g.educaand.es"});
         startActivity(intent);
     }
     public void streetView(View view){
