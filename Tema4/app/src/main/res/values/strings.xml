@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tema4</string>
+    <string name="btnVerificar" />
+    <string name="btnCancelar" />
 </resources>

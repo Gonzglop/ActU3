@@ -1,6 +1,6 @@
 import java.util.concurrent.Semaphore;
 public class Principal {
-
+public static int cont = 0;
     public static void main(String[] args) {
         Semaphore sem = new Semaphore(1);
         Consumidor c = new Consumidor(sem);

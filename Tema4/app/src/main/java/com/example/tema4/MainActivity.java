@@ -2,6 +2,8 @@ package com.example.tema4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         Toast.makeText(this, "El sistema ha terminado la actividad", Toast.LENGTH_SHORT).show();
+
+        //creo un intent para abrir Google
+        Intent ejemplo = new Intent(Intent.ACTION_VIEW);
+        ejemplo.setData(Uri.parse("http://www.google.es"));
+        startActivity(ejemplo);
     }
     //Dev-tools --> Opciones de desarrollo
 

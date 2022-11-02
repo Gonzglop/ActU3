@@ -9,30 +9,49 @@ public class Consumidor extends Thread{
     public static int sumatorio = 0;
 
     public void run(){
-        while (sumatorio<=2000){
-            consumeProductos();
+        while (sumatorio<=100){
+            try {
+                for (int i = 0; i <Productor.productos.length; i++) {
+                    System.out.println("hola");
+
+                    consumeProductos2(i);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         System.out.println(sumatorio);
     }
-    public void consumeProductos(){
-        for (int i = 0; i <Productor.productos.length; i++) {
-            if (Productor.productos[i]>=0 && sumatorio<=2000){
-                try {
-                    semaphore.acquire();
 
-                    sumatorio += Productor.productos[i];
-                    Productor.productos[i]=-1;
-                    sleep(1000);
+    private synchronized void consumeProductos2(int i) throws InterruptedException {
+        if (Principal.cont==0){
+            System.out.println("El array está vacío");
+            this.wait();
+        }else {
+            this.notify();
+        }
+        if (Productor.productos[i]>=0 && sumatorio<=100){
+            try {
+                semaphore.acquire();
+                System.out.println(this.getName()+"consume un producto en posición "+ i);
 
-                    System.out.println("consume un producto");
+                sumatorio += Productor.productos[i];
+                Productor.productos[i]=-1;
+                Principal.cont--;
 
-                    semaphore.release();
+                System.out.println(Principal.cont);
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                sleep(1000);
 
+
+                semaphore.release();
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+        }else{
+            System.out.println("No puede consumir");
         }
     }
 }
