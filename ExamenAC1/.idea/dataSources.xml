@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="root" uuid="d30e7c48-0b17-4fe5-9622-87b7466425ff">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+<<<<<<< HEAD
+      <jdbc-url>jdbc:mysql://localhost:3306/iesbelen</jdbc-url>
+=======
+      <jdbc-url>jdbc:mysql://localhost:3307/concesionario</jdbc-url>
+>>>>>>> 91a9b25b3b2686c42a9a5c1460960266f34c5cea
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
