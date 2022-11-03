@@ -1,7 +1,0 @@
-#Fichero de configuracion
-#Wed Nov 02 12:38:51 CET 2022
-server=localhost
-password=root
-database=concesionario
-port=3307
-user=root
