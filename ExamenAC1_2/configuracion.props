@@ -1,0 +1,7 @@
+#Fichero de configuracion
+#Thu Nov 03 12:15:21 CET 2022
+server=localhost
+password=I3SB3l3n
+database=iesbelen
+port=3306
+user=userIESBelen
