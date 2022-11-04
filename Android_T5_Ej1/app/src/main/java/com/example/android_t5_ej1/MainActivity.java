@@ -2,6 +2,7 @@ package com.example.android_t5_ej1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //Recupero el elemento del layout y defino los valores (array) del listado
         ListView listaOpciones = findViewById(R.id.list);
+        //listaOpciones.addFooterView(listaOpciones);
         final String[] datos = {"Opción 1","Opción 2","Opción 3","Opción 4","Opción 5"};
 
         //Creo el adaptador
@@ -43,55 +46,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Recupero el elemento del layout y defino los valores (array) del listado
-        GridView listado = findViewById(R.id.grid);
-        final String[] datosG = {"Elemento 1","Elemento 2","Elemento 3","Elemento 4","Elemento 5"};
+        ListView listaOpciones2 = findViewById(R.id.list2);
+        final String[] datos2 = {"Opción 1","Opción 2","Opción 3","Opción 4","Opción 5"};
 
         //Creo el adaptador
-        ArrayAdapter<String> adaptadorG = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,datosG);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,datos2);
 
         //Asigno el adaptador
-        listado.setAdapter(adaptadorG);
+        listaOpciones2.setAdapter(adaptador2);
 
         //Defino el manejador de eventos
-        listado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaOpciones2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
 
                 //3 opciones de hacerlo
 
-                //Toast.makeText(MainActivity.this, datosG[posicion], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, datos[posicion], Toast.LENGTH_SHORT).show();
                 //Toast.makeText(MainActivity.this, adapterView.getItemAtPosition(posicion).toString(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, adapterView.getAdapter().getItem(posicion).toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
-
-        //Recupero el elemento del layout y defino los valores (array) del listado
-        Spinner listaSpinner = findViewById(R.id.spinner);
-        final String[] datosS = {"Sección 1","Sección 2","Sección 3","Sección 4","Sección 5"};
-
-        //Creo el adaptador
-        ArrayAdapter<String> adaptadorS = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,datosS);
-
-        //Asigno el adaptador
-        listaSpinner.setAdapter(adaptadorS);
-
-        //Defino el manejador de eventos
-
-        listaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int posicion, long l) {
-                //3 opciones de hacerlo
-
-                //Toast.makeText(MainActivity.this, datosS[posicion], Toast.LENGTH_SHORT).show();
-                //Toast.makeText(MainActivity.this, adapterView.getItemAtPosition(posicion).toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, adapterView.getAdapter().getItem(posicion).toString(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
 }
