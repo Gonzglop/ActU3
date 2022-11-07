@@ -1,14 +1,17 @@
+import java.util.concurrent.Semaphore;
 
 public class Consumidor extends Thread {
 
     private ArrayCompartido arrayCompartido;
+    Semaphore semC;
     private int sumatorio;
     private int limite;
 
-    public Consumidor(ArrayCompartido b, int l) {
+    public Consumidor(ArrayCompartido b, int l,Semaphore semC) {
         this.arrayCompartido = b;
         this.sumatorio = 0;
         this.limite = l;
+        this.semC = semC;
     }
 
     public void run() {

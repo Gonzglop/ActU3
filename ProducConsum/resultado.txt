@@ -1,0 +1,67 @@
+
+Hilo consumidor: esperando...
+Hilo productor 2: Introduce el valor 4 en la posición 0
+Hilo productor 1: Introduce el valor 5 en la posición 1
+Hilo consumidor: Saca el valor 5 en la posición 1
+Hilo productor 1: Introduce el valor 8 en la posición 1
+Hilo consumidor: Saca el valor 8 en la posición 1
+Hilo productor 2: Introduce el valor 5 en la posición 1
+Hilo consumidor: Saca el valor 5 en la posición 1
+Hilo productor 1: Introduce el valor 6 en la posición 1
+Hilo productor 1: Introduce el valor 2 en la posición 2
+Hilo productor 2: Introduce el valor 6 en la posición 3
+Hilo consumidor: Saca el valor 6 en la posición 3
+Hilo productor 1: Introduce el valor 9 en la posición 3
+Hilo consumidor: Saca el valor 9 en la posición 3
+Hilo productor 1: Introduce el valor 6 en la posición 3
+Hilo consumidor: Saca el valor 6 en la posición 3
+Hilo productor 1: Introduce el valor 6 en la posición 3
+Hilo productor 2: Introduce el valor 4 en la posición 4
+Hilo productor 2: Introduce el valor 10 en la posición 5
+Hilo productor 2: Introduce el valor 3 en la posición 6
+Hilo productor 1: Introduce el valor 3 en la posición 7
+Hilo consumidor: Saca el valor 3 en la posición 7
+Hilo consumidor: Saca el valor 3 en la posición 6
+Hilo productor 2: Introduce el valor 8 en la posición 6
+Hilo productor 1: Introduce el valor 9 en la posición 7
+Hilo productor 1: Introduce el valor 4 en la posición 8
+Hilo productor 1: Introduce el valor 4 en la posición 9
+Hilo productor 1: El array está LLENO.
+Hilo consumidor: Saca el valor 4 en la posición 9
+Hilo productor 2: Introduce el valor 1 en la posición 9
+Hilo productor 2: El array está LLENO.
+Hilo productor 1: esperando...
+Hilo consumidor: Saca el valor 1 en la posición 9
+Hilo productor 1: Introduce el valor 7 en la posición 9
+Hilo productor 1: El array está LLENO.
+Hilo productor 1: esperando...
+Hilo productor 2: esperando...
+Hilo consumidor: Saca el valor 7 en la posición 9
+Hilo productor 1: Introduce el valor 8 en la posición 9
+Hilo productor 1: El array está LLENO.
+Hilo productor 2: esperando...
+Hilo consumidor: Saca el valor 8 en la posición 9
+Hilo productor 2: Introduce el valor 9 en la posición 9
+Hilo productor 2: El array está LLENO.
+Hilo consumidor: Saca el valor 9 en la posición 9
+Hilo productor 1: Introduce el valor 5 en la posición 9
+Hilo productor 1: El array está LLENO.
+Hilo productor 2: esperando...
+Hilo consumidor: Saca el valor 5 en la posición 9
+Hilo productor 2: Introduce el valor 10 en la posición 9
+Hilo productor 2: El array está LLENO.
+Hilo productor 1: esperando...
+Hilo productor 2: esperando...
+Hilo consumidor: Saca el valor 10 en la posición 9
+Hilo productor 1: Introduce el valor 9 en la posición 9
+Hilo productor 1: El array está LLENO.
+Hilo productor 2: esperando...
+Hilo consumidor: Saca el valor 9 en la posición 9
+Hilo productor 2: Introduce el valor 2 en la posición 9
+Hilo productor 2: El array está LLENO.
+Hilo consumidor: Saca el valor 2 en la posición 9
+Hilo productor 1: Introduce el valor 3 en la posición 9
+Hilo productor 1: El array está LLENO.
+Hilo productor 2: esperando...
+Hilo productor 1: esperando...
+TOTAL CONSUMIDO: 100

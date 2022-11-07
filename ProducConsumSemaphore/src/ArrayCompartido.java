@@ -1,9 +1,12 @@
 
+import java.util.concurrent.Semaphore;
+
 import static java.lang.Thread.currentThread;
 
 public class ArrayCompartido {
 
     private int[] arrayProductos;
+    Semaphore sem;
     private int cont;
     private boolean vacio;
     private boolean lleno;
@@ -14,15 +17,17 @@ public class ArrayCompartido {
     }
 
 
-    public ArrayCompartido(int tam){
+    public ArrayCompartido(int tam,Semaphore sem){
         this.arrayProductos = new int[tam];
+        this.sem = sem;
         this.cont = 0;
         this.vacio = true;
         this.lleno = false;
         this.resultado = "";
     }
     
-    public synchronized int consumir(){
+    public int consumir() {
+        this.sem.acquireUninterruptibly();
         while(vacio){
             try {
                 System.err.println("Hilo consumidor: esperando...");
@@ -43,12 +48,13 @@ public class ArrayCompartido {
             System.err.println("Hilo consumidor: El array está VACÍO.");
             resultado += "\nHilo consumidor: El array está VACÍO.";
         }
-        notifyAll();
+        this.sem.release();
         
         return arrayProductos[cont];
     }
     
-    public synchronized void producir(int p){
+    public void producir(int p) {
+        this.sem.acquireUninterruptibly();
         while(lleno){
             try {
                 System.out.println("Hilo productor " + currentThread().getId() + ": esperando...");
@@ -72,7 +78,7 @@ public class ArrayCompartido {
             System.out.println("Hilo productor " + currentThread().getId() + ": El array está LLENO.");
             resultado += "\nHilo productor " + currentThread().getId() + ": El array está LLENO." ;
         }
-        notifyAll();
+        this.sem.release();
     }
 
 }
