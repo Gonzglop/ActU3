@@ -36,13 +36,13 @@ public class Barbero implements Runnable {
 
         int posSillaClienteSinAtender;
         
-        while (true) {
-            
+        while (gestorSillas.contClientes <gestorSillas.MAX_CLIENTES || gestorSillas.getSiguienteCliente()!=-1) {
+
             posSillaClienteSinAtender = this.gestorSillas.getSiguienteCliente();
             if (posSillaClienteSinAtender == -1) {
                 Barbero.esperarTiempoAzar(this.segundosMaximoEspera);
             } else {
-                System.out.println("Barbero atendiendo silla: " + posSillaClienteSinAtender);
+                System.out.println("Barbero atendiendo silla: " + (posSillaClienteSinAtender +1));
                 Barbero.esperarTiempoAzar(this.segundosMaximoEspera);
                 this.gestorSillas.liberarSilla(posSillaClienteSinAtender);
             }

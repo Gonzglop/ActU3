@@ -1,14 +1,18 @@
 public class GestorSillas {
-    
-    private final int MAX_SILLAS;
+
+    public final int MAX_SILLAS;
+    public final int MAX_CLIENTES;
     // Vector que indica cuantas sillas hay y si están libres o no
     boolean[] estaSillaLibre;
     // Indica si el cliente sentado en esa silla está atendido por un barbero o no
     boolean[] clienteEstaAtendido;
 
-    public GestorSillas(int numSillas) {
+    int contClientes = 0;
+
+    public GestorSillas(int numSillas, int nCliente) {
         
         MAX_SILLAS = numSillas;
+        MAX_CLIENTES = nCliente;
         // Construimos los vectores...
         estaSillaLibre = new boolean[MAX_SILLAS];
         clienteEstaAtendido = new boolean[MAX_SILLAS];
@@ -31,14 +35,12 @@ public class GestorSillas {
                y está marcado como "sin atender" (false)
                entonces la marcamos como atendida
              */
-            if (clienteEstaAtendido[i] == false && estaSillaLibre[i]) {
+            if (!estaSillaLibre[i] && !clienteEstaAtendido[i]) {
                 clienteEstaAtendido[i] = true;
                 return i;
             }
         }
-        notifyAll();
         return -1;
-
     }
 
     
@@ -51,18 +53,13 @@ public class GestorSillas {
 
         for (int i = 0; i < estaSillaLibre.length; i++) {
             // Si está libre la silla ...
-            if (estaSillaLibre[i]==true) {
+            if (estaSillaLibre[i]) {
                 // se marca como ocupada
                 estaSillaLibre[i] = false;
                 //... y devolvemos i
-
-
                 return i;
-
             }
-
         }
-        notifyAll();
         // Si llegamos aquí es que no había nada libre
         return -1;
     }
@@ -75,7 +72,7 @@ public class GestorSillas {
     public synchronized void liberarSilla(int pos) {
         estaSillaLibre[pos] = true;
         clienteEstaAtendido[pos] = false;
-        System.out.println("Se marcha el cliente de la silla: " + pos);
-        notifyAll();
+        System.out.println("Se marcha el cliente de la silla: " + (pos+1));
+        contClientes++;
     }
 }

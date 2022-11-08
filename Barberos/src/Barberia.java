@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class Barberia {
 
-
     public static void main(String[] args) throws InterruptedException {
         
         final Random generadorAle = new Random();
@@ -12,8 +11,8 @@ public class Barberia {
         final int MAX_ESPERA_SEGS = 3;
         Thread[] vhBarberos = new Thread[MAX_BARBEROS];
 
-        GestorSillas gestorSillas = new GestorSillas(MAX_SILLAS);
-       
+        GestorSillas gestorSillas = new GestorSillas(MAX_SILLAS, MAX_CLIENTES);
+
         for (int i = 0; i < MAX_BARBEROS; i++) {
             Barbero b = new Barbero(gestorSillas, "Barbero " + i);
             Thread hilo = new Thread(b);
@@ -23,7 +22,7 @@ public class Barberia {
 
         // Generamos unos cuantos clientes a intervalos aleatorios
         for (int i = 0; i < MAX_CLIENTES; i++) {
-            Cliente c = new Cliente(gestorSillas);
+            Cliente c = new Cliente(gestorSillas,i);
             Thread hiloCliente = new Thread(c);
             hiloCliente.start();
 
@@ -35,7 +34,7 @@ public class Barberia {
                 e.printStackTrace();
             }
         }
-        
+
         // La jornada ha terminado, "cerramos" los barberos
     }
 }

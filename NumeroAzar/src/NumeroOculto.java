@@ -1,21 +1,23 @@
 public class NumeroOculto{
     private int nAzar;
-    private int fin;
+    private int fin ;
 
     public NumeroOculto(int nAzar) {
         this.nAzar = nAzar;
+        this.fin = 0;
     }
 
-    public int propuestaNumero(int num){
-        if (nAzar==num){
+    public synchronized int propuestaNumero(int num){
+        if (nAzar==num && fin==0){
             fin = -1;
             return 1;
-        }else if (fin==-1){
-            return fin;
         }else{
             return 0;
-
         }
-
     }
+
+    public int getFin() {
+        return fin;
+    }
+
 }

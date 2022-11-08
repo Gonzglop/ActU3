@@ -2,8 +2,11 @@ public class Cliente implements Runnable {
 
     private GestorSillas gestorSillas;
 
-    public Cliente(GestorSillas gestorSillas) {
+    private int nCliente;
+
+    public Cliente(GestorSillas gestorSillas, int num) {
         this.gestorSillas = gestorSillas;
+        this.nCliente=num;
     }
 
     @Override
@@ -17,8 +20,9 @@ public class Cliente implements Runnable {
         int posSillaLibre = gestorSillas.getPosSillaLibre();
         if (posSillaLibre == -1) {
             System.out.println("Nuevo cliente - No habia sillas libres, me marcho");
+            gestorSillas.contClientes++;
             return;
         }
-        System.out.println("Nuevo cliente se sienta en la silla: " + posSillaLibre);
+        System.out.println("Nuevo cliente se sienta en la silla: " + (posSillaLibre +1));
     }
 }
