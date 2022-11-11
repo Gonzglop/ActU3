@@ -1,59 +1,152 @@
-from random import randrange
-cont = 1
-tablero = [[1, 2, 3], [4, 'X', 6], [7, 8, 9]]
-diccionario = {1:tablero[0][0], 2:tablero[0][1], 3:tablero[0][2],
-               4:tablero[1][0], 5:tablero[1][1], 6:tablero[1][2],
-               7:tablero[2][0], 8:tablero[2][1], 9:tablero[2][2]}
+import random
+
+victoria = False
+sign = False
+contX = 1
+contO = 0
+tablero = {1: 1, 2: 2, 3: 3,
+           4: 4, 5: 'X', 6: 6,
+           7: 7, 8: 8, 9: 9}
+
 
 def DisplayBoard(tablero):
     # La función acepta un parámetro el cual contiene el estado actual del tablero
     # y lo muestra en la consola.
     print(
-        '+-------+-------+-------+\n'+
-        '|       |       |       |\n'+
-        '|  ',tablero[0][0],'  |  ',tablero[0][1],'  |  ',tablero[0][2],'  |\n'+
-        '|       |       |       |\n'+
-        '+-------+-------+-------+\n'+
-        '|       |       |       |\n'+
-        '|  ',tablero[1][0],'  |  ',tablero[1][1],'  |  ',tablero[1][2],'  |\n'+
-        '|       |       |       |\n'+
-        '+-------+-------+-------+\n'+
-        '|       |       |       |\n'+
-        '|  ',tablero[2][0],'  |  ',tablero[2][1],'  |  ',tablero[2][2],'  |\n'+
-        '|       |       |       |\n'+
+        '+-------+-------+-------+\n' +
+        '|       |       |       |\n' +
+        '|  ', tablero[1], '  |  ', tablero[2], '  |  ', tablero[3], '  |\n' +
+        '|       |       |       |\n' +
+        '+-------+-------+-------+\n' +
+        '|       |       |       |\n' +
+        '|  ', tablero[4], '  |  ', tablero[5], '  |  ', tablero[6], '  |\n' +
+        '|       |       |       |\n' +
+        '+-------+-------+-------+\n' +
+        '|       |       |       |\n' +
+        '|  ', tablero[7], '  |  ', tablero[8], '  |  ', tablero[9], '  |\n' +
+        '|       |       |       |\n' +
         '+-------+-------+-------+\n')
 
 
 def EnterMove(tablero):
-
     # La función acepta el estado actual del tablero y pregunta al usuario acerca de su movimiento,
     # verifica la entrada y actualiza el tablero acorde a la decisión del usuario.
-    try:
-        posicion = int(input("Ingresa tu movimiento:"))
-    except ValueError:
-        print('Número no válido.')
-    if posicion in diccionario and diccionario[posicion]!='X'or'O':
-        diccionario[posicion]='O'
+    bol = False
+    global sign
+    global contO
 
-    else:
-        print('la posición no es válida')
+    while not bol:
+        try:
+            posicion = int(input("Ingresa tu movimiento:"))
+            if posicion in tablero.keys() and tablero[posicion] != 'X' and tablero[posicion] != 'O':
+                tablero[posicion] = 'O'
+                DisplayBoard(tablero)
+
+                contO =+ 1
+                if contO >= 3:
+                    # metodoVictoria
+                    sign=VictoryFor(tablero)
+                    if contO > 4 and not sign:
+                        print("Habéis quedado en tablas.")
+                        sign = True
+
+                bol = True
+            else:
+                print('la posición no es válida')
+        except ValueError:
+            print('Número no válido.')
 
 
-
-
-def MakeListOfFreeFields(tablero):
-    # La función examina el tablero y construye una lista de todos los cuadros vacíos.
-    # La lista esta compuesta por tuplas, cada tupla es un par de números que indican la fila y columna.
-    camposLibres = ((True, True, True), (True, True, True), (True, True, True))
-
-def VictoryFor(tablero, sign):
-
-    print()
-    # La función analiza el estatus del tablero para verificar si
-    # el jugador que utiliza las 'O's o las 'X's ha ganado el juego.
 def DrawMove(tablero):
     # La función dibuja el movimiento de la máquina y actualiza el tablero.
-    for i in range(10):
-        print(randrange(8))
+    global sign
+    global contX
+    print('Turno de la máquina.')
+    numAleatorio = 5
+    while tablero[numAleatorio] == 'X' or tablero[numAleatorio] == 'O':
+        numAleatorio = random.randint(1, 9)
+    tablero[numAleatorio] = 'X'
+
+    DisplayBoard(tablero)
+
+    contX = contX + 1
+    if contX >= 3:
+        # metodoVictoria
+        VictoryFor(tablero)
+        if contX > 4 and not sign:
+            print("Habéis quedado en tablas.")
+            sign = True
+
+
+def VictoryFor(tablero):
+    global sign
+
+    x = tablero[1]
+    y = tablero[2]
+    z = tablero[3]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[4]
+    y = tablero[5]
+    z = tablero[6]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[7]
+    y = tablero[8]
+    z = tablero[9]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[1]
+    y = tablero[4]
+    z = tablero[7]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[2]
+    y = tablero[5]
+    z = tablero[8]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[3]
+    y = tablero[6]
+    z = tablero[9]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[1]
+    y = tablero[5]
+    z = tablero[9]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+    x = tablero[3]
+    y = tablero[5]
+    z = tablero[7]
+    if x == y and y == z:
+        print('El ganador es ', x)
+        sign = True
+
+
+
+# La función analiza el estatus del tablero para verificar si
+# el jugador que utiliza las 'O's o las 'X's ha ganado el juego.
+
+
+print('Empieza la máquina.')
 
 DisplayBoard(tablero)
+while not sign:
+    EnterMove(tablero)
+
+    DrawMove(tablero)
