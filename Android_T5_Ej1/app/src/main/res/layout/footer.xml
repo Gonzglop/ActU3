@@ -7,13 +7,12 @@
     <TextView
         android:id="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="15sp"
-        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
         android:background="@color/black"
-        android:text=" ---- FOOTER ----"
+        android:text="---- FOOTER ----"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold" />
-
 
 </LinearLayout>

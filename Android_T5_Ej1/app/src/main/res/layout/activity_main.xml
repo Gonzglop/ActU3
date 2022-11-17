@@ -6,17 +6,13 @@
 
     <ListView
         android:id="@+id/list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#FF0000"
         android:dividerHeight="1dp"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/black" />
 
     <ListView
         android:id="@+id/list2"
@@ -26,12 +22,6 @@
         android:dividerHeight="3dp"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false" />
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/black" />
 
 
 </LinearLayout>
