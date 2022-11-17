@@ -19,11 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //Recupero el elemento del layout y defino los valores (array) del listado
         ListView listaOpciones = findViewById(R.id.list);
-        //listaOpciones.addFooterView(listaOpciones);
+
         final String[] datos = {"Opción 1","Opción 2","Opción 3","Opción 4","Opción 5"};
+
+        View mifooter = getLayoutInflater().inflate(R.layout.footer, null);
+        View miheader = getLayoutInflater().inflate(R.layout.header, null);
+        listaOpciones.addHeaderView(miheader);
+        listaOpciones.addFooterView(mifooter);
 
         //Creo el adaptador
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,datos);
@@ -36,10 +40,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
 
-                //3 opciones de hacerlo
-
-                //Toast.makeText(MainActivity.this, datos[posicion], Toast.LENGTH_SHORT).show();
-                //Toast.makeText(MainActivity.this, adapterView.getItemAtPosition(posicion).toString(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, adapterView.getAdapter().getItem(posicion).toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -60,10 +60,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
 
-                //3 opciones de hacerlo
-
-                //Toast.makeText(MainActivity.this, datos[posicion], Toast.LENGTH_SHORT).show();
-                //Toast.makeText(MainActivity.this, adapterView.getItemAtPosition(posicion).toString(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, adapterView.getAdapter().getItem(posicion).toString(), Toast.LENGTH_SHORT).show();
             }
         });
