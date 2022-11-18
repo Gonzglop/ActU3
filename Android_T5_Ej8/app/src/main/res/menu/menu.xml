@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/Mn1" android:title="DÍAS DE LA SEMANA">
+        <menu>
+            <item android:id="@+id/MnOp1" android:title="LUNES"></item>
+            <item android:id="@+id/MnOp2" android:title="MARTES"></item>
+            <item android:id="@+id/MnOp3" android:title="MIÉRCOLES"></item>
+            <item android:id="@+id/MnOp4" android:title="JUEVES"></item>
+            <item android:id="@+id/MnOp5" android:title="VIERNES"></item>
+            <item android:id="@+id/MnOp6" android:title="SÁBADO"></item>
+            <item android:id="@+id/MnOp7" android:title="DOMINGO"></item>
+        </menu>
+    </item>
+
+    <item android:id="@+id/Mn2" android:title="MESES DEL AÑO">
+        <menu>
+            <item android:id="@+id/MnM1" android:title="ENERO"></item>
+            <item android:id="@+id/MnM2" android:title="FEBRERO"></item>
+            <item android:id="@+id/MnM3" android:title="MARZO"></item>
+            <item android:id="@+id/MnM4" android:title="ABRIL"></item>
+            <item android:id="@+id/MnM5" android:title="MAYO"></item>
+            <item android:id="@+id/MnM6" android:title="JUNIO"></item>
+            <item android:id="@+id/MnM7" android:title="JULIO"></item>
+            <item android:id="@+id/MnM8" android:title="AGOSTO"></item>
+            <item android:id="@+id/MnM9" android:title="SEPTIEMBRE"></item>
+            <item android:id="@+id/MnM10" android:title="OCTUBRE"></item>
+            <item android:id="@+id/MnM11" android:title="NOVIEMBRE"></item>
+            <item android:id="@+id/MnM12" android:title="DICIEMBRE"></item>
+        </menu>
+
+    </item>
+
+
+
+</menu>
