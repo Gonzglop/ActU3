@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    final TextView etiqueta = (TextView) findViewById(R.id.lbl1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+
+        final TextView etiqueta = (TextView) findViewById(R.id.lbl1);
+
         switch (item.getItemId()){
             case R.id.MnOp1:
                 etiqueta.setText("PULSADO LUNES");

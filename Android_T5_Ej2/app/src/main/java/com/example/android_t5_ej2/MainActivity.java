@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         ListView listaOpciones = findViewById(R.id.list);
         TextView texto1 = findViewById(R.id.text1);
 
-        final String[] datos = {"Stranger Things","A Korean Odyssey","Alquimia de almas","Los Brigerton","Chernobyl","Supernatural", "Cobra Kai", "Navidad en casa", "Desaparecido", "Winx","Lucifer"};
+        final String[] datos = {"Stranger Things","A Korean Odyssey","Alquimia de almas",
+                "Los Brigerton","Chernobyl","Supernatural", "Cobra Kai", "Navidad en casa",
+                "Desaparecido", "Winx","Lucifer"};
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,datos);
 
