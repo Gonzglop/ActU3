@@ -1,0 +1,43 @@
+
+<odoo>
+    <data>
+        <!-- Definicion como mostramos la vista en el modelo -->
+        <record id="miformulario_action" model="ir.actions.act_window">
+            <field name="name">Formulario de datos</field>
+            <!-- Indicamos a que modelo aplica -->
+            <field name="res_model">miformulario.formulario</field>
+            <!-- Indicamos que los datos del formulario pueden verse en tree para el listado, y en form para la creación/edición -->
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Simple menu item -->
+        <menuitem name="Mi formulario" id="miformulario_menu"></menuitem>
+        <menuitem name="Datos" id="formulario_datos_menu" parent="miformulario_menu" action="miformulario_action"></menuitem>
+
+        <!-- Definicion del contenido por listado a traves de TREE -->
+        <record id="miformulario_view_tree" model="ir.ui.view">
+            <field name="model">Lista de datos introducidos por el formulario</field>
+            <field name="model">miformulario.formulario</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"></field>
+                    <field name="apellido1"></field>
+                    <field name="telefono"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Definicion de la Vista formulario -->
+        <record id="miformulario_view_form" model="ir.ui.view">
+            <field name="model">Formulario de introduccion de datos</field>
+            <field name="model">miformulario.formulario</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="nombre"></field>
+                    <field name="apellido1"></field>
+                    <field name="telefono"></field>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
