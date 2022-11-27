@@ -1,42 +1,46 @@
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.*;
 
 public class SocketUDPClient {
 
     public static void main(String[] args) {
-
-        String strMensaje = "Mensaje enviado desde el cliente";
+        final int PUERTO_SERVIDOR = 49171;
         DatagramSocket socketUDP;
+        DatagramPacket mensaje;
+        ByteArrayOutputStream baos;
+        DataOutputStream dos;
 
         try {
-            System.out.println("(Cliente): Estableciendo parametros de conexion...");
-            InetAddress hostServidor = InetAddress.getByName("localhost");
-            int puertoServidor = 49171;
-
-            System.out.println("(Cliente): Creando socket...");
+            System.out.println("Iniciado el cliente UDP");
             socketUDP = new DatagramSocket();
 
-            System.out.println("(Cliente) Enviando datagrama....");
-            byte[] mensaje = strMensaje.getBytes();
-            DatagramPacket peticion = new DatagramPacket(mensaje, mensaje.length,
-                    hostServidor, puertoServidor);
-            socketUDP.send(peticion);
+            System.out.println("Estableciendo parámetros de conexión...");
+            InetAddress hostServidor = InetAddress.getByName("localhost");
 
+            System.out.println("Enviando información....");
+            for (int i = 0; i < 10000; i++) {
+                baos = new ByteArrayOutputStream();
+                dos = new DataOutputStream(baos);
 
-            System.out.println("(Cliente) Recibiendo datagrama....");
-            byte[] buffer = new byte[64];
-            DatagramPacket respuesta = new DatagramPacket(buffer, buffer.length,
-                    hostServidor, puertoServidor);
-            socketUDP.receive(respuesta);
-            System.out.println("(Cliente): Mensaje recibido: " + new String(buffer));
+                dos.writeUTF("Mensaje: " + i);
+                mensaje = new DatagramPacket(baos.toByteArray(), baos.size(), hostServidor, PUERTO_SERVIDOR);
+                socketUDP.send(mensaje);
+                dos.close();
 
-            System.out.println("(Cliente): Cerrando socket...");
+            }
+            baos = new ByteArrayOutputStream();
+            dos = new DataOutputStream(baos);
+
+            dos.writeUTF("FIN");
+            mensaje = new DatagramPacket(baos.toByteArray(), baos.size(), hostServidor, PUERTO_SERVIDOR);
+            socketUDP.send(mensaje);
+            dos.close();
+
             socketUDP.close();
-            System.out.println("(Cliente) Socket cerrado.");
-        } catch (SocketException e) {
-            e.printStackTrace();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
+            System.out.println("Cerrando el cliente UDP");
+
         } catch (IOException e) {
             e.printStackTrace();
         }

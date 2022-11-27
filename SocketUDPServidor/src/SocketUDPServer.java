@@ -1,42 +1,55 @@
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.SocketException;
-
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 
 public class SocketUDPServer {
 
     public static void main(String[] args) {
-
+        final int PUERTO = 49171;
+        byte[] buffer = new byte[64];
         DatagramSocket socket;
+        DatagramPacket mensajeCliente;
+        ByteArrayInputStream bais;
+        DataInputStream dis;
+        BufferedWriter fichero;
+        String strMensajeCliente = "";
 
         try {
-            System.out.println("(Servidor) Creando socket...");
-            socket = new DatagramSocket(49171);
+            System.out.println("Iniciado el servidor UDP");
+            socket = new DatagramSocket(PUERTO);
 
+            System.out.println("Esperando la información del cliente...");
+            mensajeCliente = new DatagramPacket(buffer, buffer.length);
 
-            System.out.println("(Servidor) Recibiendo datagrama...");
-            byte[] bufferLectura = new byte[64];
-            DatagramPacket datagramaEntrada = new DatagramPacket(bufferLectura, bufferLectura.length);
-            socket.receive(datagramaEntrada);
-            System.out.println("(Servidor) Mensaje recibido: " + new String(bufferLectura));
+            fichero = new BufferedWriter(new FileWriter("FicheroTexto.txt"));
 
-            System.out.println("(Servidor) Enviando datagrama...");
-            byte[] mensajeEnviado = new String("Mensaje enviado desde el sevidor").getBytes();
-            DatagramPacket datagramaSalida = new DatagramPacket(mensajeEnviado, mensajeEnviado.length,
-                    datagramaEntrada.getAddress(),
-                    datagramaEntrada.getPort());
-            socket.send(datagramaSalida);
+            while (!strMensajeCliente.equals("FIN")){
+                socket.receive(mensajeCliente);
+                bais = new ByteArrayInputStream(mensajeCliente.getData());
+                dis = new DataInputStream(bais);
+                strMensajeCliente = dis.readUTF();
 
-            System.out.println("(Servidor) Cerrado sockets...");
+                System.out.println("Texto recibido: " + strMensajeCliente);
+
+                if (!strMensajeCliente.equals("FIN")){
+                    fichero.write(strMensajeCliente);
+                    fichero.newLine();
+                }
+            }
+            fichero.close();
+
             socket.close();
-            System.out.println("(Servidor) Socket cerrado.");
+            System.out.println("Cerrando el servidor UDP");
 
-
-        } catch (SocketException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException fn ){
+            System.out.println("No se encuentra el fichero");
+        } catch (IOException io) {
+            System.out.println("Error de E/S ");
         }
     }
 }
