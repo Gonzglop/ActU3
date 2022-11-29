@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -11,9 +12,8 @@ public class SocketTCPClient {
     private InputStream is;
     private OutputStream os;
     //Objetos específicos para el envío y recepción de cadenas de caracteres
-    private InputStreamReader isr;
-    private BufferedReader br;
-    private PrintWriter pw;
+    private DataInputStream dis;
+    private DataOutputStream dos;
     
     public SocketTCPClient(String serverIP, int serverPort) {
         this.serverIP = serverIP;
@@ -39,33 +39,43 @@ public class SocketTCPClient {
     public void abrirCanalesDeTexto() throws IOException {
         System.out.println("(Cliente) Abriendo canales de texto...");
         //Canales de lectura
-        isr = new InputStreamReader(is);
-        br = new BufferedReader(isr);
+        dis = new DataInputStream(is);
         //Canales de escritura
-        pw = new PrintWriter(os, true);
+        dos = new DataOutputStream(os);
         System.out.println("(Cliente) Canales de texto abiertos.");
     }
 
     public void cerrarCanalesDeTexto() throws IOException {
         System.out.println("(Cliente) Cerrando canales de texto...");
         //Canales de lectura
-        br.close();
-        isr.close();
+        dis.close();
         //Canales de escritura
-        pw.close();
+        dos.close();
         System.out.println("(Cliente) Canales de texto cerrados.");
     }
 
-    public String leerMensajeDeTexto() throws IOException {
+    public String leerContenidoFichero() throws IOException {
         System.out.println("(Cliente) Leyendo mensaje...");
-        String mensaje = br.readLine();
+        String mensaje = dis.readUTF();
         System.out.println("(Cliente) Mensaje leído.");
         return mensaje;
     }
 
-    public void enviarMensajeDeTexto(String mensaje) throws IOException {
+    public String solicitarNombreFichero() throws IOException {
+        System.out.println("(Cliente) Solicitando información al usuario...");
+
+        String directorio = "C:\\Users\\usuario\\Desktop";
+        String archivo = JOptionPane.showInputDialog("Introduce el nombre" +
+                " de un archivo ubicado en la siguiente ruta: " + directorio);
+
+        System.out.println("(Cliente) Información recibida.");
+
+        return directorio+"\\"+archivo;
+    }
+
+    public void enviarRuta(String mensaje) throws IOException {
         System.out.println("(Cliente) Enviando mensaje...");
-        pw.println(mensaje);
+        dos.writeUTF(mensaje);
         System.out.println("(Cliente) Mensaje enviado.");
     }
     public static void main(String[] args) {
@@ -74,11 +84,14 @@ public class SocketTCPClient {
 
             cliente.start();
             cliente.abrirCanalesDeTexto();
-            //Envío del mensaje al servidor
-            cliente.enviarMensajeDeTexto("Mensaje enviado desde el cliente");
-            //Recepción del mensaje del servidor
-            String mensajeRecibido = cliente.leerMensajeDeTexto();
-            System.out.println("(Cliente) Mensaje recibido: " + mensajeRecibido);
+            //solicita ruta archivo al usuario
+            String ruta = cliente.solicitarNombreFichero();
+            //envía ruta al servidor
+            cliente.enviarRuta(ruta);
+            //recepción y lectura del contenido del fichero
+            String contenidoFichero = cliente.leerContenidoFichero();
+            //imprime el contenido del fichero por pantalla
+            System.out.println("(Cliente) CONTENIDO DEL ARCHIVO:\n\n" + contenidoFichero);
             cliente.cerrarCanalesDeTexto();
             cliente.stop();
 
@@ -89,5 +102,3 @@ public class SocketTCPClient {
         }
     }
 }
-
-
