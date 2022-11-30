@@ -55,9 +55,9 @@ public class SocketTCPClient {
     }
 
     public String leerContenidoFichero() throws IOException {
-        System.out.println("(Cliente) Leyendo mensaje...");
+        System.out.println("(Cliente) Leyendo contenido del fichero...");
         String mensaje = dis.readUTF();
-        System.out.println("(Cliente) Mensaje leído.");
+        System.out.println("(Cliente) Contenido del fichero leído.");
         return mensaje;
     }
 
@@ -74,9 +74,9 @@ public class SocketTCPClient {
     }
 
     public void enviarRuta(String mensaje) throws IOException {
-        System.out.println("(Cliente) Enviando mensaje...");
+        System.out.println("(Cliente) Enviando ruta del fichero...");
         dos.writeUTF(mensaje);
-        System.out.println("(Cliente) Mensaje enviado.");
+        System.out.println("(Cliente) Ruta del fichero enviada.");
     }
     public static void main(String[] args) {
         SocketTCPClient cliente = new SocketTCPClient("127.0.0.1",49171);
