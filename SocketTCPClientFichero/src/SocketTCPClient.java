@@ -1,13 +1,11 @@
 import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
-
 
 public class SocketTCPClient {
 
-    private String serverIP;
-    private int serverPort;
+    private final String serverIP;
+    private final int serverPort;
     private Socket socket;
     private InputStream is;
     private OutputStream os;
@@ -20,7 +18,7 @@ public class SocketTCPClient {
         this.serverPort = serverPort;
     }
     
-    public void start() throws UnknownHostException, IOException {
+    public void start() throws IOException {
         System.out.println("(Cliente) Estableciento conexión...");
         socket = new Socket(serverIP, serverPort);
         os = socket.getOutputStream();
@@ -54,20 +52,23 @@ public class SocketTCPClient {
         System.out.println("(Cliente) Canales de texto cerrados.");
     }
 
-    public String leerContenidoFichero() throws IOException {
+    public void leerContenidoFichero() throws IOException {
         System.out.println("(Cliente) Leyendo contenido del fichero...");
-        String mensaje = dis.readUTF();
-        System.out.println("(Cliente) Contenido del fichero leído.");
-        return mensaje;
+        String mensaje;
+        try {
+            mensaje = dis.readUTF();
+            System.out.println("(Cliente) Contenido del fichero leído.");
+            System.out.println("(Cliente) CONTENIDO DEL ARCHIVO:\n\n" + mensaje);
+        } catch (EOFException e) {
+            System.err.println("(Cliente) Archivo no encontrado.");
+        }
     }
 
     public String solicitarNombreFichero() throws IOException {
         System.out.println("(Cliente) Solicitando información al usuario...");
-
         String directorio = "C:\\Users\\usuario\\Desktop";
         String archivo = JOptionPane.showInputDialog("Introduce el nombre" +
                 " de un archivo ubicado en la siguiente ruta: " + directorio);
-
         System.out.println("(Cliente) Información recibida.");
 
         return directorio+"\\"+archivo;
@@ -81,7 +82,6 @@ public class SocketTCPClient {
     public static void main(String[] args) {
         SocketTCPClient cliente = new SocketTCPClient("127.0.0.1",49171);
         try {
-
             cliente.start();
             cliente.abrirCanalesDeTexto();
             //solicita ruta archivo al usuario
@@ -89,15 +89,11 @@ public class SocketTCPClient {
             //envía ruta al servidor
             cliente.enviarRuta(ruta);
             //recepción y lectura del contenido del fichero
-            String contenidoFichero = cliente.leerContenidoFichero();
-            //imprime el contenido del fichero por pantalla
-            System.out.println("(Cliente) CONTENIDO DEL ARCHIVO:\n\n" + contenidoFichero);
+            cliente.leerContenidoFichero();
             cliente.cerrarCanalesDeTexto();
             cliente.stop();
 
-        }catch (UnknownHostException e) {
-            e.printStackTrace();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
