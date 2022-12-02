@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Hola " + input1.getText() + ", accediendo a la app ", Toast.LENGTH_SHORT).show();
 
                     Intent actInicio = new Intent(MainActivity.this,InicioActivity.class);
+                    actInicio.putExtra("usuario",input1.getText().toString());
                     startActivity(actInicio);
                 }
             }

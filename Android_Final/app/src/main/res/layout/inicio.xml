@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="50sp"
-            android:text="Bienvenido Gonzalo"
+            android:text="Bienvenido"
             android:textAlignment="center"
             android:textColor="#489465"
             android:textSize="20sp"

@@ -1,7 +1,13 @@
 package com.example.myapplication;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -17,10 +23,19 @@ import android.widget.Toast;
 
 public class InicioActivity extends AppCompatActivity {
 
+    ActivityResultLauncher resultLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
+
+
+
+        final TextView txtSaludo = (TextView) findViewById(R.id.text1);
+
+        Bundle extras = getIntent().getExtras();
+        String usuario = extras.getString("usuario");
+        txtSaludo.setText("Bienvenido " + usuario);
 
         final Button boton1 = (Button) findViewById(R.id.bton5);
         final Button boton2 = (Button) findViewById(R.id.bton2);
@@ -30,40 +45,49 @@ public class InicioActivity extends AppCompatActivity {
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 boton1.setBackgroundColor(Color.rgb(243, 230, 248)
                 );
                 boton2.setBackgroundColor(Color.rgb(247, 193, 234)
                 );
                 boton3.setBackgroundColor(Color.rgb(247, 193, 234)
                 );
+
+                 */
             }
         });
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 boton2.setBackgroundColor(Color.rgb(243, 230, 248)
                 );
                 boton1.setBackgroundColor(Color.rgb(247, 193, 234)
                 );
                 boton3.setBackgroundColor(Color.rgb(247, 193, 234)
                 );
+
+                 */
             }
         });
         boton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 boton3.setBackgroundColor(Color.rgb(243, 230, 248)
                 );
                 boton2.setBackgroundColor(Color.rgb(247, 193, 234)
                 );
                 boton1.setBackgroundColor(Color.rgb(247, 193, 234)
                 );
+
+                 */
             }
         });
         boton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(InicioActivity.this, "Accediendo a la siguiente pantalla", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InicioActivity.this, "Accediendo a la carta", Toast.LENGTH_SHORT).show();
                 Intent actEncu = new Intent(InicioActivity.this,EncuestaActivity.class);
                 startActivity(actEncu);
             }
