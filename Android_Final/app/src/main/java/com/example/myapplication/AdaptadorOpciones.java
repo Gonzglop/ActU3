@@ -19,12 +19,15 @@ class OpcionViewHolder extends RecyclerView.ViewHolder{
         titulo = (TextView) itemView.findViewById(R.id.LblTitulo);
         precio = (TextView) itemView.findViewById(R.id.LblPrecio);
         icono = (ImageView) itemView.findViewById(R.id.icono);
+
     }
     public void bindOpcion(Opcion t){
         titulo.setText(t.getTitulo());
         precio.setText(t.getPrecio());
         icono.setImageResource(t.getIcono());
     }
+
+
 }
 
 class AdaptadorOpciones extends RecyclerView.Adapter<OpcionViewHolder>

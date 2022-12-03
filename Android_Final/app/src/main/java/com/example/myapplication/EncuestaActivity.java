@@ -5,7 +5,6 @@ import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,16 +18,18 @@ public class EncuestaActivity extends AppCompatActivity {
     private ArrayList<Opcion> datos; // Guardamos las opciones del listado
     private RecyclerView recView; // Lista tipo RecyclerView
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.encuesta);
+
         // Buscamos el layout del RecyclerView
         recView = (RecyclerView) findViewById(R.id.recView);
         // Indicamos que el tamaño del RecyclerView no cambia
         recView.setHasFixedSize(true);
+
+        registerForContextMenu(recView);
+
         datos = new ArrayList<Opcion>();
         // Definimos las opciones
         datos.add(new Opcion("Pitufo jamón","1,20€", R.drawable.logo80px));
@@ -75,8 +76,14 @@ public class EncuestaActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu,v,menuInfo);
         MenuInflater inflater = getMenuInflater();
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-        switch (info.position){
+        menu.setHeaderTitle(datos.get(recView.getChildAdapterPosition(v)).getTitulo().toString());
+        //menu.setHeaderTitle(listadoLW.getAdapter().getItem(info.position).toString());
+        //switch (info.position){
+        switch (recView.getChildAdapterPosition(v)){
             case 0:
+                inflater.inflate(R.menu.menu_contextual,menu);
+                return;
+            case 1:
                 inflater.inflate(R.menu.menu_contextual,menu);
                 return;
         }

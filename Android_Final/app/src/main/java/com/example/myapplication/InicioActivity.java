@@ -29,8 +29,6 @@ public class InicioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
 
-
-
         final TextView txtSaludo = (TextView) findViewById(R.id.text1);
 
         Bundle extras = getIntent().getExtras();
