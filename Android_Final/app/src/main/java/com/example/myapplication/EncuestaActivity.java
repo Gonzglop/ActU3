@@ -17,9 +17,11 @@ import java.util.ArrayList;
 public class EncuestaActivity extends AppCompatActivity {
     private ArrayList<Opcion> datos; // Guardamos las opciones del listado
     private RecyclerView recView; // Lista tipo RecyclerView
+    private AdaptadorOpciones adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.encuesta);
 
@@ -28,10 +30,31 @@ public class EncuestaActivity extends AppCompatActivity {
         // Indicamos que el tamaño del RecyclerView no cambia
         recView.setHasFixedSize(true);
 
-        registerForContextMenu(recView);
+        //registerForContextMenu(recView);
 
-        datos = new ArrayList<Opcion>();
         // Definimos las opciones
+        datos = new ArrayList<>();
+        generaListaObjetos();
+
+        // Creamos el adaptador que se usa para mostrar las opcion del listado
+        adaptador = new AdaptadorOpciones(datos);
+
+        // Definimos el evento onClick
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getBaseContext(), "Has añadido al carrito: " +
+                        datos.get(recView.getChildAdapterPosition(view)).getTitulo(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        recView.setAdapter(adaptador);
+        recView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recView.setItemAnimator(new DefaultItemAnimator());
+
+    }
+
+    private void generaListaObjetos() {
         datos.add(new Opcion("Pitufo jamón","1,20€", R.drawable.logo80px));
         datos.add(new Opcion("Pitufo queso","1,20€", R.drawable.logo80px));
         datos.add(new Opcion("Pitufo mixto","1,40€", R.drawable.logo80px));
@@ -43,34 +66,8 @@ public class EncuestaActivity extends AppCompatActivity {
         datos.add(new Opcion("Aquarius","1,20€", R.drawable.logo80px));
         datos.add(new Opcion("Café","1,20€", R.drawable.logo80px));
         datos.add(new Opcion("Té","1,20€", R.drawable.logo80px));
-
-/*
-        for (int i = 1; i <= 15; i++) {
-            datos.add(new Opcion("Bocadillo " + i, "2," + i + "€", R.drawable.logo80px));
-        }
-
-        for (int i = 1; i <= 15; i++) {
-            datos.add(new Opcion("Bebida " + i, "1," + i + "€", R.drawable.logo80px));
-        }
-
- */
-        // Creamos el adaptador que se usa para mostrar las opcion del listado
-        final AdaptadorOpciones adaptador = new AdaptadorOpciones(datos);
-        // Definimos el evento onClick
-        adaptador.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "Has añadido al carrito: " +
-                        datos.get(recView.getChildAdapterPosition(view)).getTitulo(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        recView.setAdapter(adaptador);
-        recView.setLayoutManager(new
-                LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recView.setItemAnimator(new DefaultItemAnimator());
-
     }
-
+/*
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,v,menuInfo);
@@ -83,11 +80,7 @@ public class EncuestaActivity extends AppCompatActivity {
             case 0:
                 inflater.inflate(R.menu.menu_contextual,menu);
                 return;
-            case 1:
-                inflater.inflate(R.menu.menu_contextual,menu);
-                return;
         }
     }
-
-
+ */
 }

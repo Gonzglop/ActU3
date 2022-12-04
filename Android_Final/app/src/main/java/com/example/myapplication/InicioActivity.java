@@ -33,7 +33,7 @@ public class InicioActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         String usuario = extras.getString("usuario");
-        txtSaludo.setText("Bienvenido " + usuario);
+        txtSaludo.setText("Bienvenid@ " + usuario);
 
         final Button boton1 = (Button) findViewById(R.id.bton5);
         final Button boton2 = (Button) findViewById(R.id.bton2);
