@@ -13,11 +13,12 @@ public class Main {
         try {
             transaction.begin();
 
-            Employee akiko = new Employee();
-            akiko.setId(9);
-            akiko.setFirstName("Aran");
-            akiko.setLastName("Uemai");
-            entityManager.persist(akiko);
+            Employee rosa = new Employee();
+            rosa.setId(10);
+            rosa.setFirstName("Rosa");
+            rosa.setLastName("Castro");
+            entityManager.persist(rosa);
+            //entityManager.flush();
 
             transaction.commit();
         } finally {
