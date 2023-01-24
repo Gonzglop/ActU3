@@ -115,7 +115,7 @@ public class Loteria extends JFrame {
         //Resultados
         String results = "";
         results += "Número: "+ numero + "\n"
-                + "Premio: " + premio + "€\n"
+                + "Premio: " + premio + "€/décimo\n"
                 + "Fecha: " + timestamp + "\n"
                 + "Estado del sorteo: " + status ;
         JOptionPane.showMessageDialog(this, results);
