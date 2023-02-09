@@ -16,13 +16,13 @@ public class Order {
         this.customerName = customerName;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        calculateTotalCost();
+        //calculateTotalCost();
     }
 
     private void calculateTotalCost() {
         totalCost = 0;
         for (Pizza pizza : pizzas) {
-            totalCost += pizza.getSize() * 10 + pizza.getExtras().size() * 2;
+            totalCost += pizza.getSize() * 0.5 + pizza.getExtras().size() * 1;
         }
     }
 
@@ -40,7 +40,7 @@ public class Order {
 
     public void setPizzas(List<Pizza> pizzas) {
         this.pizzas = pizzas;
-        calculateTotalCost();
+        //calculateTotalCost();
     }
 
     public String getCustomerName() {

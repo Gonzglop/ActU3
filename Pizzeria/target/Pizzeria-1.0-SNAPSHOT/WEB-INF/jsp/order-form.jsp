@@ -10,10 +10,58 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pedido</title>
+    <title>Nuevo Pedido</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px #888888;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td,
+        th {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007aff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Su Pedido</h1>
+<h1>Nuevo pedido</h1>
 <form action="order?action=create" method="post">
     <table>
         <tr>
@@ -48,9 +96,11 @@
         </tr>
         <tr>
             <td>Ingredientes extra:</td>
-            <td><input type="checkbox" name="extraIngredients" value="Aceitunas">Aceitunas
+            <td>
+                <input type="checkbox" name="extraIngredients" value="Aceitunas">Aceitunas
                 <input type="checkbox" name="extraIngredients" value="Gambas">Gambas
-                <input type="checkbox" name="extraIngredients" value="Cebolla">Cebolla</td>
+                <input type="checkbox" name="extraIngredients" value="Cebolla">Cebolla
+            </td>
         </tr>
         <tr>
             <td></td>

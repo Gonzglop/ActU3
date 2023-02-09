@@ -13,9 +13,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Pedidos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
 <h1>Pedidos de Pizzas</h1>
+<%
+    List<Order> orders = (List<Order>) request.getAttribute("order");
+
+    if(orders.size()!=0){
+%>
 <table>
     <tr>
         <th>ID</th>
@@ -26,11 +56,7 @@
         <th>Tipo</th>
         <th>Ingred. Extra</th>
     </tr>
-    <%
-        List<Order> orders = (List<Order>) request.getAttribute("order");
 
-        if(orders!=null){
-    %>
     <%
         for (Order order : orders) {
     %>
@@ -53,10 +79,15 @@
     <%
         }
     %>
-    <%
-        }
-    %>
-
 </table>
+<%
+    }
+    else
+    {
+%>
+ <h2>No hay pedidos...</h2>
+<%
+    }
+%>
 </body>
 </html>

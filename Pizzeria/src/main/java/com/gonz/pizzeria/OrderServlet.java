@@ -14,23 +14,25 @@ import java.util.List;
 public class OrderServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static List<Order> orders = new ArrayList<>();
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if (action == null) {
-            action = "list";
-        }
         switch (action) {
-            case "new":
-                showOrderForm(request, response);
-                break;
             case "create":
                 createOrder(request, response);
                 request.getRequestDispatcher("/WEB-INF/jsp/success.jsp").forward(request, response);
                 break;
+        }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String action = request.getParameter("action");
+
+        switch (action) {
+            case "new":
+                showOrderForm(request, response);
+                break;
             case "list":
-            default:
                 listOrders(request, response);
                 break;
         }
@@ -53,13 +55,16 @@ public class OrderServlet extends HttpServlet {
         if (pizzaSizes != null) {
             for (int i = 0; i < pizzaSizes.length; i++) {
                 Pizza pizza = new Pizza();
+                List<String> extras = new ArrayList<>();
                 pizza.setSize(Integer.parseInt(pizzaSizes[i]));
                 pizza.setType(pizzaTypes[i]);
                 if (extraIngredients != null) {
-                    List<String> extras = new ArrayList<>();
                     for (String extraIngredient : extraIngredients) {
                         extras.add(extraIngredient);
                     }
+                    pizza.setExtras(extras);
+                }else {
+                    extras.add("-");
                     pizza.setExtras(extras);
                 }
                 pizzas.add(pizza);
