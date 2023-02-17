@@ -2,42 +2,40 @@ import javax.mail.MessagingException;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws MessagingException {
+    public static void main(String[] args) {
 
-        // obtengo el archivo json de la imagen y lo almaceno en una variable para posteriormente enviarlo por email.
+        // Busca la imagen en la API y la almaceno en una variable para enviarla por email posteriormente.
         API api = new API();
+        String jsonResult = api.searchImage("onigiri");
 
-        String cadenaJson = api.buscarImagen("onigiri");
-
+        // Descarga la imagen usando el archivo JSON obtenido anteriormente.
         Json json = new Json();
-        try {
-            json.gestionaJson(cadenaJson);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        // subo la imagen al servidor
+        json.downloadImage(jsonResult);
 
-
+        // Sube la imagen al servidor mediante FTP.
         FTP ftp = new FTP();
-        ftp.subirArchivo("192.168.0.107", 21, "Gonzalo", "gonzalo",
-                "/gonzalo/imagenPrueba.jpg",
-                "imagenPrueba.jpg");
+        ftp.uploadFile("192.168.0.107", 21, "Gonzalo", "gonzalo",
+                "/gonzalo/imagen.jpg",
+                "imagen.jpg");
 
-
-        //envio la imagen por email
-        String emailEmisor = "glopcas222@g.educaand.es";
-        String emailDestinatario = "gonz.g.lop@gmail.com"; //rvilbri995@g.educaand.es
+        // Envía la imagen por email.
+        String senderEmail = "glopcas222@g.educaand.es";
+        String recipientEmail = "rvilbri995@g.educaand.es";
         String password = "olyxujwruausrypz";
-        String asunto = "Prueba Global Tema 4";
+        String subject = "Prueba Global Tema 4";
 
         try {
-            String mensajeEmail = cadenaJson;
+            String emailMessage = jsonResult;
             Email email = new Email();
-            email.enviarMensajeConAdjunto(emailEmisor, emailDestinatario, asunto, mensajeEmail, emailEmisor, password, "G:\\Mi unidad\\screenshot.png");
+            System.out.println("Enviando correo...");
+            email.sendMessageWithAttachment(senderEmail, recipientEmail, subject, emailMessage,
+                    senderEmail, password, "G:\\Mi unidad\\screenshot.png");
+
             System.out.println("Correo enviado con éxito.");
 
         } catch (MessagingException | IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("No se ha podido enviar el correo.");
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }

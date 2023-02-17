@@ -14,43 +14,54 @@ import javax.mail.internet.MimeMultipart;
 public class Email {
     private Properties properties;
     private Session session;
-    private void setPropiedadesServidorSMTP(){
+
+    private void setSMTPProperties() {
+        // Obtiene las propiedades del sistema
         properties = System.getProperties();
-        properties.put("mail.smtp.auth",true);
-        properties.put("mail.smtp.host","smtp.gmail.com");
-        properties.put("mail.smtp.port","587");
-        properties.put("mail.smtp.starttls.enable",true);
-        session = Session.getInstance(properties,null);
+        // Establece las propiedades del servidor SMTP
+        properties.put("mail.smtp.auth", true);
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.starttls.enable", true);
+        session = Session.getInstance(properties, null);
     }
-    private Transport conectarServidorSMTP(String direccionEmail, String password) throws MessagingException {
-        Transport t = session.getTransport("smtp");
-        t.connect(properties.getProperty("mail.smtp.host"),direccionEmail,password);
-        return t;
+
+    private Transport connectSMTPServer(String email, String password) throws MessagingException {
+        // Obtiene una instancia de la sesión SMTP y se conecta al servidor SMTP
+        Transport transport = session.getTransport("smtp");
+        transport.connect(properties.getProperty("mail.smtp.host"), email, password);
+        return transport;
     }
-    private Message crearNucleoMensaje(String emisor, String destinario, String asunto) throws MessagingException {
-        Message mensaje = new MimeMessage(session);
-        mensaje.setFrom(new InternetAddress(emisor));
-        mensaje.addRecipient(Message.RecipientType.TO,new InternetAddress(destinario));
-        mensaje.setSubject(asunto);
-        return mensaje;
+
+    private Message createMessageCore(String sender, String recipient, String subject) throws MessagingException {
+        // Crea un mensaje con remitente, destinatario y asunto
+        Message message = new MimeMessage(session);
+        message.setFrom(new InternetAddress(sender));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+        message.setSubject(subject);
+        return message;
     }
-    private Message crearMensajeConAdjunto(String emisor, String destinatario, String asunto, String textoMensaje, String pathFichero) throws MessagingException, IOException {
-        Message mensaje = crearNucleoMensaje(emisor,destinatario,asunto);
-        BodyPart bodyPart = new MimeBodyPart();
-        bodyPart.setText(textoMensaje);
-        MimeBodyPart mimeBodyPart = new MimeBodyPart();
-        mimeBodyPart.attachFile(new File(pathFichero));
+
+    private Message createMessageWithAttachment(String sender, String recipient, String subject, String messageText, String filePath) throws MessagingException, IOException {
+        // Crea el núcleo del mensaje con texto y archivo adjunto
+        Message message = createMessageCore(sender, recipient, subject);
+        BodyPart textBodyPart = new MimeBodyPart();
+        textBodyPart.setText(messageText);
+        MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+        attachmentBodyPart.attachFile(new File(filePath));
         Multipart multipart = new MimeMultipart();
-        multipart.addBodyPart(bodyPart);
-        multipart.addBodyPart(mimeBodyPart);
-        mensaje.setContent(multipart);
-        return mensaje;
+        multipart.addBodyPart(textBodyPart);
+        multipart.addBodyPart(attachmentBodyPart);
+        message.setContent(multipart);
+        return message;
     }
-    public void enviarMensajeConAdjunto(String emisor, String destinatario, String asunto, String textoMensaje, String direccionEmail, String password,String pathFichero) throws MessagingException, IOException {
-        setPropiedadesServidorSMTP();
-        Message mensaje = crearMensajeConAdjunto(emisor,destinatario,asunto,textoMensaje,pathFichero);
-        Transport t = conectarServidorSMTP(direccionEmail,password);
-        t.sendMessage(mensaje, mensaje.getAllRecipients());
-        t.close();
+
+    public void sendMessageWithAttachment(String sender, String recipient, String subject, String messageText, String email, String password, String filePath) throws MessagingException, IOException {
+        // Envía el mensaje con el archivo adjunto
+        setSMTPProperties();
+        Message message = createMessageWithAttachment(sender, recipient, subject, messageText, filePath);
+        Transport transport = connectSMTPServer(email, password);
+        transport.sendMessage(message, message.getAllRecipients());
+        transport.close();
     }
 }
