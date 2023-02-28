@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="video_data_usage_entries">
+        <item>Sólo wifi</item>
+        <item>Ahorrar datos</item>
+        <item>Datos máximos</item>
+    </string-array>
+    <string-array name="video_data_usage_values">
+        <item>wifi</item>
+        <item>save_data</item>
+        <item>max_data</item>
+    </string-array>
+</resources>
