@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><libro publicacion="2002">
+    <titulo>XPath Essentials</titulo>
+    <autor>
+      <apellido>Watt</apellido>
+      <nombre>Adrew</nombre>
+    </autor>
+    <editorial>Wiley</editorial>
+    <paginas>516</paginas>
+  </libro>

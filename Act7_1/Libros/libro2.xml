@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><libro edicion="2" publicacion="2003">
+    <titulo>XML Imprescindible</titulo>
+    <autor>
+      <apellido>Harold</apellido>
+      <nombre>Elliot Rusty</nombre>
+    </autor>
+    <autor>
+    <apellido>Means</apellido>
+      <nombre>W. Scott</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>832</paginas>
+  </libro>

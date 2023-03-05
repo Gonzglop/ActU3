@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><libro publicacion="2002">
+    <titulo>XML Schema</titulo>
+    <autor>
+      <apellido>van der Vlist</apellido>
+      <nombre>Eric</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>400</paginas>
+  </libro>

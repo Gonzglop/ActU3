@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><entrada>
+    <titulo>XML Imprescindible</titulo>
+    <prestamo>
+      <fechainicio>2011-02-12</fechainicio>
+      <devolucion>2011-02-16</devolucion>
+      <lector>
+        <nombre>Jose</nombre>
+        <apellidos>GutiÃ©rrez GonzÃ¡lez</apellidos>
+        
+        <telefono>919485432</telefono>
+      </lector>
+    </prestamo>
+  </entrada>

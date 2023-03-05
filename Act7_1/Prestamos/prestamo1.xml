@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><entrada>
+    <titulo>XML Imprescindible</titulo>
+    <prestamo>
+      <fechainicio>2011-05-02</fechainicio>
+      <lector>
+        <nombre>Pepito</nombre>
+        <apellidos>Grillo</apellidos>
+        
+        <telefono>972987654</telefono>
+      </lector>
+    </prestamo>
+  </entrada>

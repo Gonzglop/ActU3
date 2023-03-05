@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><libro edicion="2" publicacion="2003">
+    <titulo>Learning XML</titulo>
+    <autor>
+      <apellido>Ray</apellido>
+      <nombre>Erik T.</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>416</paginas>
+  </libro>

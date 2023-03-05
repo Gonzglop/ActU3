@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Fichero: libros.xml --><biblioteca>
+ <libros>
+  <libro edicion="2" publicacion="2003">
+    <titulo>Learning XML</titulo>
+    <autor>
+      <apellido>Ray</apellido>
+      <nombre>Erik T.</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>416</paginas>
+  </libro>
+  <libro edicion="2" publicacion="2003">
+    <titulo>XML Imprescindible</titulo>
+    <autor>
+      <apellido>Harold</apellido>
+      <nombre>Elliot Rusty</nombre>
+    </autor>
+    <autor>
+    <apellido>Means</apellido>
+      <nombre>W. Scott</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>832</paginas>
+  </libro>
+  <libro publicacion="2002">
+    <titulo>XML Schema</titulo>
+    <autor>
+      <apellido>van der Vlist</apellido>
+      <nombre>Eric</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>400</paginas>
+  </libro>
+  <libro publicacion="2002">
+    <titulo>XPath Essentials</titulo>
+    <autor>
+      <apellido>Watt</apellido>
+      <nombre>Adrew</nombre>
+    </autor>
+    <editorial>Wiley</editorial>
+    <paginas>516</paginas>
+  </libro>
+  <libro publicacion="2005">
+    <titulo> Beginning XSLT 2.0: Form Novice to Professional</titulo>
+    <autor>
+      <apellido>Tennison</apellido>
+      <nombre>Jeni</nombre>
+    </autor>
+    <editorial>Apress</editorial>
+    <paginas>700</paginas>
+  </libro>
+  <libro publicacion="2007">
+    <titulo> XQuery</titulo>
+    <autor>
+      <apellido>Walmsley</apellido>
+      <nombre>Priscilla</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>491</paginas>
+  <evaluacion>10</evaluacion></libro>
+ </libros>
+
+<!-- Tabla prestamos -->
+ <prestamos>
+  <entrada>
+    <titulo>XML Imprescindible</titulo>
+    <prestamo>
+      <fechainicio>2011-05-02</fechainicio>
+      <lector>
+        <nombre>Pepito</nombre>
+        <apellidos>Grillo</apellidos>
+        
+        <telefono>972987654</telefono>
+      </lector>
+    </prestamo>
+  </entrada>
+  <entrada>
+    <titulo>XML Imprescindible</titulo>
+    <prestamo>
+      <fechainicio>2011-02-12</fechainicio>
+      <devolucion>2011-02-16</devolucion>
+      <lector>
+        <nombre>Jose</nombre>
+        <apellidos>GutiÃ©rrez GonzÃ¡lez</apellidos>
+        
+        <telefono>919485432</telefono>
+      </lector>
+    </prestamo>
+  </entrada>
+  <entrada>
+    <titulo>XPath Essentials</titulo>
+    <prestamo>
+      <fechainicio>2011-02-23</fechainicio>
+      <devolucion>2011-03-10</devolucion>
+      <lector>
+        <nombre>Pepito</nombre>
+        <apellidos>Grillo</apellidos>
+        
+        <telefono>972987654</telefono>
+      </lector>
+    </prestamo>
+  </entrada>
+ </prestamos>
+</biblioteca>

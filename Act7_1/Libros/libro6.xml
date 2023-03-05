@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><libro publicacion="2007">
+    <titulo> XQuery</titulo>
+    <autor>
+      <apellido>Walmsley</apellido>
+      <nombre>Priscilla</nombre>
+    </autor>
+    <editorial>O'Reilly</editorial>
+    <paginas>491</paginas>
+  <evaluacion>10</evaluacion></libro>
