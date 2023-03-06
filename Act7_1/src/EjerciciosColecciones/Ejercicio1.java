@@ -29,15 +29,20 @@ public class Ejercicio1 {
         col = DatabaseManager.getCollection(
                 "xmldb:exist://localhost:8080/exist/xmlrpc/db" + nomCol,
                 "admin", "admin");
+
+        System.out.println("Colección obtenida con éxito: " + nomCol + "\n");
         return col;
     }
 
     public static void importarDocumentos(XPathQueryService serv, String carpeta, String consulta, String prefijo) throws XMLDBException, FileNotFoundException, TransformerConfigurationException, TransformerException, IOException {
+
+        System.out.println("Se inicia la importación de la colección: " + carpeta);
         ResourceSet resultSet = serv.query(consulta);
 
         File librosDir = new File(carpeta);
         if (!librosDir.exists()) {
             librosDir.mkdir();
+            System.out.println("\tSe crea el directorio: " + carpeta);
         }
 
         int i = 1;
@@ -46,6 +51,7 @@ public class Ejercicio1 {
             XMLResource res = (XMLResource) iter.nextResource();
             String fileName = prefijo + i + ".xml";
             File file = new File(librosDir, fileName);
+
             FileOutputStream out = new FileOutputStream(file);
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -54,7 +60,9 @@ public class Ejercicio1 {
             transformer.transform(source, streamResult);
             out.close();
             i++;
+            System.out.println("\t\tSe crea el fichero: " + fileName);
         }
+        System.out.println("Importación finalizada con éxito.\n");
     }
 
     public static void main(String[] args) {

@@ -47,7 +47,7 @@
       <nombre>Jeni</nombre>
     </autor>
     <editorial>Apress</editorial>
-    <paginas>700</paginas>
+    <paginas>797</paginas>
   </libro>
   <libro publicacion="2007">
     <titulo> XQuery</titulo>
@@ -57,7 +57,7 @@
     </autor>
     <editorial>O'Reilly</editorial>
     <paginas>491</paginas>
-  <evaluacion>10</evaluacion></libro>
+  </libro>
  </libros>
 
 <!-- Tabla prestamos -->
@@ -65,11 +65,11 @@
   <entrada>
     <titulo>XML Imprescindible</titulo>
     <prestamo>
-      <fechainicio>2011-05-02</fechainicio>
+      <inicio>2011-05-02</inicio>
       <lector>
         <nombre>Pepito</nombre>
         <apellidos>Grillo</apellidos>
-        
+        <direccion>Rue Percebe, 13</direccion>
         <telefono>972987654</telefono>
       </lector>
     </prestamo>
@@ -77,12 +77,12 @@
   <entrada>
     <titulo>XML Imprescindible</titulo>
     <prestamo>
-      <fechainicio>2011-02-12</fechainicio>
+      <inicio>2011-02-12</inicio>
       <devolucion>2011-02-16</devolucion>
       <lector>
         <nombre>Jose</nombre>
         <apellidos>GutiÃ©rrez GonzÃ¡lez</apellidos>
-        
+        <direccion>Rue Percebe, 13</direccion>
         <telefono>919485432</telefono>
       </lector>
     </prestamo>
@@ -90,12 +90,12 @@
   <entrada>
     <titulo>XPath Essentials</titulo>
     <prestamo>
-      <fechainicio>2011-02-23</fechainicio>
+      <inicio>2011-02-23</inicio>
       <devolucion>2011-03-10</devolucion>
       <lector>
         <nombre>Pepito</nombre>
         <apellidos>Grillo</apellidos>
-        
+        <direccion>Rue Percebe, 13</direccion>
         <telefono>972987654</telefono>
       </lector>
     </prestamo>

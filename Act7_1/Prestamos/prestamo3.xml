@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><entrada>
     <titulo>XPath Essentials</titulo>
     <prestamo>
-      <fechainicio>2011-02-23</fechainicio>
+      <inicio>2011-02-23</inicio>
       <devolucion>2011-03-10</devolucion>
       <lector>
         <nombre>Pepito</nombre>
         <apellidos>Grillo</apellidos>
-        
+        <direccion>Rue Percebe, 13</direccion>
         <telefono>972987654</telefono>
       </lector>
     </prestamo>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><entrada>
     <titulo>XML Imprescindible</titulo>
     <prestamo>
-      <fechainicio>2011-05-02</fechainicio>
+      <inicio>2011-05-02</inicio>
       <lector>
         <nombre>Pepito</nombre>
         <apellidos>Grillo</apellidos>
-        
+        <direccion>Rue Percebe, 13</direccion>
         <telefono>972987654</telefono>
       </lector>
     </prestamo>

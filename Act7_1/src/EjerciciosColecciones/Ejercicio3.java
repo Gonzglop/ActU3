@@ -19,7 +19,6 @@ import org.exist.xmldb.DatabaseImpl;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.XMLDBException;
 
-
 public class Ejercicio3 {
 
     private static Collection obtenColeccion(String nomCol) throws Exception {
@@ -32,9 +31,9 @@ public class Ejercicio3 {
                 "admin", "admin");
         return col;
     }
-    
-    public static void ejecutaFicheroXQ(String ficheroXQ) throws IOException{
-    String url = "http://localhost:8080/exist/rest/db/colecciones/" + ficheroXQ;
+
+    public static void ejecutaFicheroXQ(String ficheroXQ) throws IOException {
+        String url = "http://localhost:8080/exist/rest/db/colecciones/" + ficheroXQ;
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet request = new HttpGet(url);
         CloseableHttpResponse response = client.execute(request);
@@ -46,7 +45,7 @@ public class Ejercicio3 {
         EntityUtils.consume(entity);
         response.close();
         client.close();
-}
+    }
 
     public static void consultar(XPathQueryService serv, String consulta) throws XMLDBException, FileNotFoundException, TransformerConfigurationException, TransformerException, IOException {
         ResourceSet resultSet = serv.query(consulta);
@@ -61,36 +60,34 @@ public class Ejercicio3 {
     }
 
     public static void main(String[] args) throws IOException {
-                    System.out.println("Ejecutando modificación 1:");
-
+        System.out.println("Ejecutando modificación 1:");
         ejecutaFicheroXQ("modificacion1.xq");
-                    System.out.println("\nEjecutando modificación 2:");
-
-        ejecutaFicheroXQ("modificacion2.xq");
-                    System.out.println("\nEjecutando modificación 3:");
-
-        ejecutaFicheroXQ("modificacion3.xq");
-                    System.out.println("\nEjecutando modificación 4:");
-
-        ejecutaFicheroXQ("modificacion4.xq");
         
+        System.out.println("\nEjecutando modificación 2:");
+        ejecutaFicheroXQ("modificacion2.xq");
+        
+        System.out.println("\nEjecutando modificación 3:");
+        ejecutaFicheroXQ("modificacion3.xq");
+        
+        System.out.println("\nEjecutando modificación 4:");
+        ejecutaFicheroXQ("modificacion4.xq");
+
         Collection col = null;
         try {
-       
+
             col = obtenColeccion("/colecciones");
             XPathQueryService serv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
 
-            System.out.println("Consulta1:");
+            System.out.println("Comprobación 1:");
             consultar(serv, "//libro[@publicacion ='2007']");
-            
-            System.out.println("\nConsulta2:");
 
+            System.out.println("\nComprobación 2:");
             consultar(serv, "//libro[@publicacion='2005']/paginas");
-            System.out.println("\nConsulta3:");
-
+            
+            System.out.println("\nComprobación 3:");
             consultar(serv, "//fechainicio");
-            System.out.println("\nConsulta4:");
-
+            
+            System.out.println("\nComprobación 4:");
             consultar(serv, "//lector");
 
         } catch (Exception ex) {
