@@ -34,7 +34,9 @@ public class Ejercicio1 {
         return col;
     }
 
-    public static void importarDocumentos(XPathQueryService serv, String carpeta, String consulta, String prefijo) throws XMLDBException, FileNotFoundException, TransformerConfigurationException, TransformerException, IOException {
+    public static void importarDocumentos(XPathQueryService serv, String carpeta, String consulta, String prefijo) 
+            throws XMLDBException, FileNotFoundException, TransformerConfigurationException, TransformerException, 
+            IOException {
 
         System.out.println("Se inicia la importación de la colección: " + carpeta);
         ResourceSet resultSet = serv.query(consulta);
