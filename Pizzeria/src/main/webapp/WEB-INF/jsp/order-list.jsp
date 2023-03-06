@@ -85,7 +85,7 @@
     else
     {
 %>
- <h2>No hay pedidos...</h2>
+ <h3>: No hay pedidos...</h3>
 <%
     }
 %>

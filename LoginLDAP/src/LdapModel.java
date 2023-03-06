@@ -5,6 +5,7 @@ import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
 import javax.naming.directory.*;
+import javax.swing.*;
 
 public class LdapModel {
 
@@ -32,14 +33,21 @@ public class LdapModel {
         controls.setSearchScope(SearchControls.SUBTREE_SCOPE);
         controls.setReturningAttributes(reqAtt);
 
-        NamingEnumeration users = connection.search("dc=dambelen,dc=com", searchFilter, controls);
+        String results = null;
+        try {
+            NamingEnumeration users = connection.search("dc=dambelen,dc=com", searchFilter, controls);
 
-        String results = "";
-        while (users.hasMore()) {
-            SearchResult result = (SearchResult) users.next();
-            Attributes attr = result.getAttributes();
-            results += attr.get("cn")+"\n";
-            System.out.println(attr.get("cn"));
+            results = "";
+            while (users.hasMore()) {
+                SearchResult result = (SearchResult) users.next();
+                Attributes attr = result.getAttributes();
+                results += attr.get("cn")+"\n";
+                System.out.println(attr.get("cn"));
+            }
+        } catch (NamingException e) {
+            JOptionPane.showMessageDialog(null,
+                    "No se han encontrado usuarios","Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
         return results;
     }
@@ -51,14 +59,21 @@ public class LdapModel {
         controls.setSearchScope(SearchControls.SUBTREE_SCOPE);
         controls.setReturningAttributes(reqAtt);
 
-        NamingEnumeration users = connection.search(label + group + ",dc=dambelen,dc=com", searchFilter, controls);
+        String results = null;
+        try {
+            NamingEnumeration users = connection.search(label + group + ",dc=dambelen,dc=com", searchFilter, controls);
 
-        String results = "";
-        while (users.hasMore()) {
-            SearchResult result = (SearchResult) users.next();
-            Attributes attr = result.getAttributes();
-            results += attr.get("cn")+"\n";
-            System.out.println(attr.get("cn"));
+            results = "";
+            while (users.hasMore()) {
+                SearchResult result = (SearchResult) users.next();
+                Attributes attr = result.getAttributes();
+                results += attr.get("cn")+"\n";
+                System.out.println(attr.get("cn"));
+            }
+        } catch (NamingException e) {
+            JOptionPane.showMessageDialog(null,
+                    "No se han encontrado coincidencias con: " + label + group,"Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
         return results;
     }
@@ -79,6 +94,10 @@ public class LdapModel {
             results = "Usuario encontrado: " + attr.get("cn");
             System.out.println("Usuario encontrado: " + attr.get("cn"));
         }
+        if (results=="")
+            JOptionPane.showMessageDialog(null,
+                "No se han encontrado coincidencias con: " + username,"Error",
+                JOptionPane.ERROR_MESSAGE);
 
         return results;
     }
