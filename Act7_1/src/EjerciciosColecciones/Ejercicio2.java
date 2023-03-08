@@ -28,13 +28,13 @@ public class Ejercicio2 {
     public static void main(String[] args) throws IOException {
         System.out.println("Consulta 1:");
         ejecutaFicheroXQ("consulta1.xq");
-        
+
         System.out.println("\nConsulta 2:");
         ejecutaFicheroXQ("consulta2.xq");
-        
+
         System.out.println("\nConsulta 3:");
         ejecutaFicheroXQ("consulta3.xq");
-        
+
         System.out.println("\nConsulta 4:");
         ejecutaFicheroXQ("consulta4.xq");
     }

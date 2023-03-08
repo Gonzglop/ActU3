@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><entrada>
     <titulo>XML Imprescindible</titulo>
     <prestamo>
-      <fechainicio>2011-02-12</fechainicio>
+      <inicio>2011-02-12</inicio>
       <devolucion>2011-02-16</devolucion>
       <lector>
         <nombre>Jose</nombre>
         <apellidos>GutiÃ©rrez GonzÃ¡lez</apellidos>
-        
+        <direccion>Rue Percebe, 13</direccion>
         <telefono>919485432</telefono>
       </lector>
     </prestamo>
