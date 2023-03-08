@@ -38,10 +38,6 @@ public class ContactosProvider extends ContentProvider {
         public static final String COLUMN_NAME_NOMBRE = "nombre";
         public static final String COLUMN_NAME_TELEFONO = "telefono";
         public static final String COLUMN_NAME_AVATAR = "avatar";
-
-        public static Uri crearUriContacto(long id) {
-            return URI_CONTENIDO.buildUpon().appendPath(String.valueOf(id)).build();
-        }
     }
 
     public static String[] allColumns = {
@@ -87,7 +83,7 @@ public class ContactosProvider extends ContentProvider {
 
         int match = URI_MATCHER.match(uri);
 
-        switch (match){
+        switch (match) {
             case TODO:
                 return "vnd.android.cursor.dir/vnd.examencp.contacto";
             case UNO:

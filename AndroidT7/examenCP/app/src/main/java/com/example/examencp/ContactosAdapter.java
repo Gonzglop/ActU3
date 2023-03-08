@@ -41,6 +41,9 @@ public class ContactosAdapter extends ArrayAdapter<Contacto> {
         TextView telefonoView = listItemView.findViewById(R.id.contacto_telefono);
         telefonoView.setText(String.valueOf(contacto.getTelefono()));
 
+        TextView idView = listItemView.findViewById(R.id.contacto_id);
+        idView.setText(String.valueOf(contacto.getId()));
+
         return listItemView;
     }
 }

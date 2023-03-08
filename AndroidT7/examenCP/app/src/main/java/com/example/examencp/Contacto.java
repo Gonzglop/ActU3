@@ -1,19 +1,10 @@
 package com.example.examencp;
 
-import android.content.ContentValues;
-
 public class Contacto {
     private int id;
     private String nombre;
     private String telefono;
     private int avatar;
-
-    public Contacto(int id, String nombre, String telefono, int avatar) {
-        this.id = id;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.avatar = avatar;
-    }
 
     public Contacto() {
     }
@@ -53,13 +44,5 @@ public class Contacto {
     @Override
     public String toString() {
         return nombre;
-    }
-
-    public ContentValues getContentValues() {
-        ContentValues values = new ContentValues();
-        values.put(ContactosProvider.ContactoEntry.COLUMN_NAME_NOMBRE, nombre);
-        values.put(ContactosProvider.ContactoEntry.COLUMN_NAME_TELEFONO, telefono);
-        values.put(ContactosProvider.ContactoEntry.COLUMN_NAME_AVATAR, avatar);
-        return values;
     }
 }

@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
+            android:textColor="@color/purple_700"
             android:textStyle="bold" />
 
         <TextView
@@ -27,6 +28,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/contacto_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
